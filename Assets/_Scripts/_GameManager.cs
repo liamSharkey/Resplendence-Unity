@@ -5,6 +5,11 @@ using UnityEngine;
 public class _GameManager : MonoBehaviour
 {
     public static bool bossOneDefeated;
+    public static int numberOfDefeatedBosses;
+    public static int totalNumberOfBosses;
+
+    public static bool isPaused = false;
+
 
     // Start is called before the first frame update
     void Start()
