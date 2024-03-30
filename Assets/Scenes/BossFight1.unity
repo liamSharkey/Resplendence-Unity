@@ -18167,7 +18167,9 @@ MonoBehaviour:
   deathTime: 1
   cooldown: 0.2
   fireCost: 10
+  bigFireCost: 25
   projectile: {fileID: 903726096729985332, guid: 2e0b71df1709fab45a88c2a548724729, type: 3}
+  projectileBig: {fileID: 903726096729985332, guid: 532f6f9b2f7758e48ae8d3d960f603e1, type: 3}
   health: 20
   maxHealth: 20
 --- !u!95 &583646367

@@ -24,7 +24,10 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 fireChange;
     public float fireCost = 10;
+    public float bigFireCost = 30;
+
     public GameObject projectile;
+    public GameObject projectileBig;
 
     public float health = 100;
     public float maxHealth = 100;
@@ -36,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     private float takeDamageCooldown = 0.7f;
     private bool canTakeDamage = true;
     private Renderer renderer;
+
+    private bool shiftPressed;
+    private bool ctrlPressed;
 
     void Start()
     {
@@ -109,20 +115,38 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private float cost;
     void fireProjectile()
     {
-        if (SceneManager.GetActiveScene().name != "BossFight1") { return; }
-        if (fireChange != Vector3.zero && tranquility > fireCost && Time.time > lastFiredTime + cooldown)
-        {
+        // only allows projectiles in non boss fight scenes
+        if (! SceneManager.GetActiveScene().name.Contains("Boss")) { return; }
+        if (Time.time < (lastFiredTime + cooldown)) { return; }
 
-            // fire projectile with power of total tranquility / 2
-            Instantiate(projectile, transform.position, Quaternion.Euler(fireChange));
+        //Set cost to either big projectile cost or regular dependent on shift
+        shiftPressed = Input.GetKey("left shift");
+        if (shiftPressed) { cost = bigFireCost; }
+        else
+        {
+            cost = fireCost;
+        }
+
+        if (fireChange != Vector3.zero && tranquility > cost)
+        {
+            if (shiftPressed)
+            {
+                Instantiate(projectileBig, transform.position, Quaternion.Euler(fireChange));
+            }
+            else
+            {
+                Instantiate(projectile, transform.position, Quaternion.Euler(fireChange));
+            }
+            
             lastFiredTime = Time.time;
 
             // removes tranquility from player
-            if (tranquility > fireCost)
+            if (tranquility > cost)
             {
-                tranquility -= fireCost;
+                tranquility -= cost;
             }
             else
             {
@@ -130,12 +154,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        else if (fireChange != Vector3.zero && tranquility < fireCost && Time.time > lastFiredTime + cooldown)
+        else if (fireChange != Vector3.zero && tranquility < cost)
         {
             lastFiredTime = Time.time;
-            if (tranquility > (fireCost/2))
+            if (tranquility > (cost / 2))
             {
-                tranquility -= (fireCost/2);
+                tranquility -= (cost / 2);
             }
             else
             {
