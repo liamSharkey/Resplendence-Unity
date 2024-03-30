@@ -52,7 +52,6 @@ public class firstBoss : Boss
 
         if (moving)
         {
-            Debug.Log(newPosition);
             moveTowards(newPosition);
         }
 
