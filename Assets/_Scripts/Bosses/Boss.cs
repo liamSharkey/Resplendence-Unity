@@ -28,7 +28,6 @@ public class Boss : MonoBehaviour
 
     
 
-    [HideInInspector]
     public Transform playerTransform;
     public Animator animator;
     public CapsuleCollider2D capsuleCollider;
