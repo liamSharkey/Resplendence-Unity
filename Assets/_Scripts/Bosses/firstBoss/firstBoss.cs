@@ -34,6 +34,8 @@ public class firstBoss : MonoBehaviour
     public GameObject bossHealthBar;
     public GameObject victoryScreen;
 
+    private int bossNumber = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -143,7 +145,9 @@ public class firstBoss : MonoBehaviour
 
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
+    // if the player runs into the boss sprite, player takes damage
     {
         if (collision.gameObject.name == "Player")
         {
@@ -164,7 +168,7 @@ public class firstBoss : MonoBehaviour
         victoryScreen.SetActive(true);
 
         // setting highest defeated boss to be 1
-        _GameManager.savePrefInt("HighestBossDefeated", 1);
+        _GameManager.savePrefInt("HighestBossDefeated", bossNumber);
 
         yield return new WaitForSeconds(deathTime);
 
