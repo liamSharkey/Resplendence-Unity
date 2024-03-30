@@ -163,7 +163,8 @@ public class firstBoss : MonoBehaviour
         bossHealthBar.SetActive(false);
         victoryScreen.SetActive(true);
 
-        _GameManager.savePref("Boss1", "true");
+        // setting highest defeated boss to be 1
+        _GameManager.savePrefInt("HighestBossDefeated", 1);
 
         yield return new WaitForSeconds(deathTime);
 

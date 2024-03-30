@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class _GameManager : MonoBehaviour
 {
-    public static bool bossOneDefeated;
+    public static int highestBossDefeated;
     public static int numberOfDefeatedBosses;
-    public static int totalNumberOfBosses;
+    public static int totalNumberOfBosses = 1;
 
     public static bool isPaused = false;
 
@@ -14,7 +15,8 @@ public class _GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossOneDefeated = PlayerPrefs.GetString("Boss1") == "true";
+        // PlayerPrefs : HighestBossDefeated
+        highestBossDefeated = PlayerPrefs.GetInt("HighestBossDefeated");
     }
 
     // Update is called once per frame
@@ -23,15 +25,24 @@ public class _GameManager : MonoBehaviour
         
     }
 
-    public static void savePref(string key, string value)
+    public static void savePrefString(string key, string value)
     {
         PlayerPrefs.SetString(key, value);
     }
+    public static void savePrefInt(string key, int value)
+    {
+        PlayerPrefs.SetInt(key, value);
+    }
 
-    [ContextMenu("Reset Scoreboard")]
+    [ContextMenu("Reset Bosses")]
     public static void Reset()
     {
-        PlayerPrefs.SetString("Boss1", "false");
+        PlayerPrefs.SetInt("Boss1", 0);
+    }
+
+    public static bool allBossesDefeated()
+    {
+        return PlayerPrefs.GetInt("HighestBossDefeated") == totalNumberOfBosses;
     }
 
 }

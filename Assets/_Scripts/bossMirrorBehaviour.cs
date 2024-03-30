@@ -13,12 +13,12 @@ public class bossMirrorBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mirror.SetActive(inRange && ! _GameManager.bossOneDefeated);
-        UIInstruction.SetActive(inRange && !_GameManager.bossOneDefeated);
+        mirror.SetActive(inRange && ! _GameManager.allBossesDefeated());
+        UIInstruction.SetActive(inRange && !_GameManager.allBossesDefeated());
 
-        UIFinished.SetActive(inRange && _GameManager.bossOneDefeated);
+        UIFinished.SetActive(inRange && _GameManager.allBossesDefeated());
 
-        if (Input.GetKeyUp("e") && inRange && !_GameManager.bossOneDefeated)
+        if (Input.GetKeyUp("e") && inRange && !_GameManager.allBossesDefeated())
         {
             SceneManager.LoadScene("BossFight1");
         }
