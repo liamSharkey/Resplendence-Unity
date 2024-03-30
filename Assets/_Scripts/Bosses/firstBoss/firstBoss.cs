@@ -75,7 +75,6 @@ public class firstBoss : MonoBehaviour
 
         if (moving)
         {
-            Debug.Log(newPosition);
             moveTowards(newPosition);
         }
 

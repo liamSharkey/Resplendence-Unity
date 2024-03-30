@@ -25,9 +25,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 fireChange;
     public float fireCost = 10;
     public float bigFireCost = 30;
+    public float ultFireCost = 90;
 
     public GameObject projectile;
     public GameObject projectileBig;
+    public GameObject projectileUlt;
 
     public float health = 100;
     public float maxHealth = 100;
@@ -52,6 +54,12 @@ public class PlayerMovement : MonoBehaviour
         lastFiredTime = Time.time;
         lastHealed = Time.time;
         lastDamaged = Time.time;
+
+        maxHealth = 20 + _GameManager.highestBossDefeated * 5;
+        health = maxHealth;
+
+        tranquilityLimit = 100 + _GameManager.highestBossDefeated * 20;
+        tranquility = 0;
     }
 
     void Update()
@@ -124,7 +132,9 @@ public class PlayerMovement : MonoBehaviour
 
         //Set cost to either big projectile cost or regular dependent on shift
         shiftPressed = Input.GetKey("left shift");
+        ctrlPressed = Input.GetKey(KeyCode.LeftControl);
         if (shiftPressed) { cost = bigFireCost; }
+        else if (ctrlPressed) { cost = ultFireCost;  }
         else
         {
             cost = fireCost;
@@ -135,6 +145,10 @@ public class PlayerMovement : MonoBehaviour
             if (shiftPressed)
             {
                 Instantiate(projectileBig, transform.position, Quaternion.Euler(fireChange));
+            }
+            else if (ctrlPressed)
+            {
+                Instantiate(projectileUlt, transform.position, Quaternion.Euler(fireChange));
             }
             else
             {
@@ -215,3 +229,4 @@ public class PlayerMovement : MonoBehaviour
     }
 
 }
+
