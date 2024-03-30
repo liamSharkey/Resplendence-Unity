@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectiles : MonoBehaviour
 {
     public float movementSpeed = 6;
+    public float damage = 10;
 
     private float rotation;
     private float xRotation;
@@ -57,7 +58,7 @@ public class Projectiles : MonoBehaviour
     {
         if (collision.gameObject.name == "Boss")
         {
-            collision.gameObject.GetComponent<firstBoss>().health -= 10;
+            collision.gameObject.GetComponent<firstBoss>().health -= damage;
         }
         if (collision.gameObject.name != "Player")
         {
