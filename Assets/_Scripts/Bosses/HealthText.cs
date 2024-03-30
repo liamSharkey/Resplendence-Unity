@@ -8,14 +8,14 @@ public class HealthText : MonoBehaviour
     public TextMeshProUGUI healthText;
 
     public GameObject bossObject;
-    private firstBoss bossScript;
+    private Boss bossScript;
 
     private float health;
 
     // Start is called before the first frame update
     void Start()
     {
-        bossScript = bossObject.GetComponent<firstBoss>();
+        bossScript = bossObject.GetComponent<Boss>();
     }
 
     // Update is called once per frame

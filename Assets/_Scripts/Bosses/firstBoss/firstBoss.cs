@@ -4,51 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class firstBoss : MonoBehaviour
+public class firstBoss : Boss
 {
-    private float lastFired;
-    public float fireTime = 1f;
-
-    private float movementSpeed = 7;
-
-    public GameObject bossProjectile;
-    public GameObject player;
-    private Transform playerTransform;
-    private Animator animator;
-    private CapsuleCollider2D capsuleCollider;
-
-    private float lastMoved = 0;
-    public float moveTime = 4f;
+    
+    
     private bool moving = false;
     private Vector3 newPosition;
 
-    public float health = 100;
-    public float maxHealth = 100;
-
     private float withinRange = 2;
-    private bool inPhaseTwo = false;
 
-    private bool dead = false;
-    public float deathTime;
-
-    public GameObject bossHealthBar;
-    public GameObject victoryScreen;
-
-    private int bossNumber = 1;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = player.GetComponent<Transform>();
-        animator = GetComponent<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        bossNumber = 1;
+        movementSpeed = 7;
+        fireTime = 1f;
+        moveTime = 4f;
+        maxHealth = 400;
+        UniversalStart();
+        
 
-        health = maxHealth;
-        lastFired = Time.time;
-        lastMoved = Time.time;
-
-        victoryScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -143,16 +120,6 @@ public class firstBoss : MonoBehaviour
 
         transform.Translate(new Vector3(Time.deltaTime * xMovementSign * movementSpeed, Time.deltaTime * yMovementSign * movementSpeed, 0));
 
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    // if the player runs into the boss sprite, player takes damage
-    {
-        if (collision.gameObject.name == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerMovement>().takeDamage(5);
-        }
     }
 
     public IEnumerator die()

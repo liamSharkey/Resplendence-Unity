@@ -58,7 +58,8 @@ public class Projectiles : MonoBehaviour
     {
         if (collision.gameObject.name == "Boss")
         {
-            collision.gameObject.GetComponent<firstBoss>().health -= damage;
+            collision.gameObject.GetComponent<Boss>().health -= damage;
+
         }
         if (collision.gameObject.name != "Player")
         {
