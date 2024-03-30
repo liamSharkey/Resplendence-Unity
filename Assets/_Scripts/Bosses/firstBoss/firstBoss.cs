@@ -22,7 +22,7 @@ public class firstBoss : Boss
         movementSpeed = 7;
         fireTime = 1f;
         moveTime = 4f;
-        maxHealth = 100;
+        maxHealth = 400;
         UniversalStart();
         
 
