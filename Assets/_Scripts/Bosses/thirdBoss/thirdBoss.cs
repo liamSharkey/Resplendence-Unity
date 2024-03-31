@@ -38,7 +38,7 @@ public class thirdBoss : Boss
         statuePositions = CalculateCirclePositions(center, 6f, statueCount);
     }
 
-    private int shots = 5;
+    private int shots = 9;
 
     // Update is called once per frame
     void Update()
@@ -57,7 +57,7 @@ public class thirdBoss : Boss
             // Regular behavior for phase 1
             if (Time.time - lastFired > fireTime && !moving)
             {
-                StartCoroutine(FireRepeatedly(shots, 0.25f)); // Fire 5 times with 0.5 seconds delay
+                StartCoroutine(FireRepeatedly(shots, 0.09f)); // Fire 9 times with 0.25 seconds delay
             }
 
             // Only move if not already moving
@@ -146,7 +146,7 @@ public class thirdBoss : Boss
 
     SpawnStatues(); // Spawn statues initially
 
-    while (true)
+    while (!dead)
     {
         // Calculate position on the circle using sine and cosine functions
         float x = center.x + Mathf.Cos(Time.time * movementSpeed) * radius;
@@ -155,7 +155,6 @@ public class thirdBoss : Boss
 
         // Move towards target position
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
-
         yield return null;
     }
 }

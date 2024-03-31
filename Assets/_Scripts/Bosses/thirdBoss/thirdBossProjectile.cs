@@ -29,7 +29,7 @@ public class thirdBossProjectile : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            collision.gameObject.GetComponent<PlayerMovement>().takeDamage(5);
+            collision.gameObject.GetComponent<PlayerMovement>().takeDamage(7);
         }
         if (collision.gameObject.name != "Boss")
         {
