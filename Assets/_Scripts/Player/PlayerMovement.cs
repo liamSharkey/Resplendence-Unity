@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private float lastDamaged = 0;
     private float takeDamageCooldown = 0.7f;
     private bool canTakeDamage = true;
-    private Renderer renderer;
+    private new Renderer renderer;
 
     private bool shiftPressed;
     private bool ctrlPressed;

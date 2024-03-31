@@ -13,20 +13,15 @@ public class Boss : MonoBehaviour
     public GameObject bossProjectile;
     public GameObject player;
     
-
-    
     public float moveTime;
 
     public float health;
     public float maxHealth;
 
-
     public float deathTime;
 
     public GameObject bossHealthBar;
     public GameObject victoryScreen;
-
-    
 
     [HideInInspector]
     public Transform playerTransform;
@@ -37,9 +32,6 @@ public class Boss : MonoBehaviour
     public int bossNumber;
     public float lastFired;
     public bool dead = false;
-
-
-
 
     public void UniversalStart(){
         playerTransform = player.GetComponent<Transform>();
@@ -52,9 +44,6 @@ public class Boss : MonoBehaviour
 
         victoryScreen.SetActive(false);
     }
-
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     // if the player runs into the boss sprite, player takes damage

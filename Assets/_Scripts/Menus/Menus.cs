@@ -30,6 +30,7 @@ public class Menus : MonoBehaviour
     public void MenuFromPause()
     {
         Time.timeScale = 1f;
+        source.Play();
         SceneManager.LoadScene("Title");
     }
 
