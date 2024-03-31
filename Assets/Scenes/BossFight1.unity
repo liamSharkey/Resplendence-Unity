@@ -17537,13 +17537,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da8d94ab0f7abd41bdd9e50c6b211cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireTime: 0.11
-  movementSpeed: 0
+  fireTime: 0.2
+  movementSpeed: 7
   bossProjectile: {fileID: 903726096729985332, guid: 189f95330ef03e94fb04f9ba75b39d3c, type: 3}
   player: {fileID: 583646362}
   moveTime: 3
-  health: 4
-  maxHealth: 4
+  health: 400
+  maxHealth: 400
   deathTime: 6
   bossHealthBar: {fileID: 1910634291}
   victoryScreen: {fileID: 1137608307}
@@ -22658,7 +22658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1739713298
 AudioSource:
   m_ObjectHideFlags: 0

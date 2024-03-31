@@ -17692,6 +17692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelChangerObject: {fileID: 680198384}
+  source: {fileID: 0}
 --- !u!1 &422412749
 GameObject:
   m_ObjectHideFlags: 0
@@ -22657,7 +22658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1739713298
 AudioSource:
   m_ObjectHideFlags: 0
