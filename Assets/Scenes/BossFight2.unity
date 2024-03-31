@@ -17555,6 +17555,7 @@ MonoBehaviour:
   bossNumber: 0
   lastFired: 0
   dead: 0
+  sizeChangeDelay: 10
 --- !u!1 &264089097
 GameObject:
   m_ObjectHideFlags: 0

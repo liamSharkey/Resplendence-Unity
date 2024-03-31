@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class secondBossProjectile : MonoBehaviour
 {
-    public float minSpeed = -3; 
-    public float maxSpeed = -15; 
+    public float minSpeed = -3;
+    public float maxSpeed = -15;
     public Sprite[] projectileSprites;
 
-    public int minDamage = 1; 
-    public int maxDamage = 8; 
+    public int minDamage = 1;
+    public int maxDamage = 8;
+
+    public float splitDistance = 5f; 
+    public bool canSplit = true; 
 
     private float movementSpeed;
     private float aliveTime;
+    private float traveledDistance = 0f;
     public float lifespan = 2f;
 
     void Start()
@@ -28,7 +32,14 @@ public class secondBossProjectile : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(new Vector3(0, movementSpeed * Time.deltaTime, 0));
+        float moveStep = movementSpeed * Time.deltaTime;
+        transform.Translate(new Vector3(0, moveStep, 0));
+        traveledDistance += Mathf.Abs(moveStep);
+
+        if (traveledDistance >= splitDistance && canSplit)
+        {
+            SplitProjectile();
+        }
 
         if (Time.time - aliveTime > lifespan)
         {
@@ -36,11 +47,23 @@ public class secondBossProjectile : MonoBehaviour
         }
     }
 
+    private void SplitProjectile()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject newProjectile = Instantiate(gameObject, transform.position, Quaternion.identity);
+            secondBossProjectile newProjectileScript = newProjectile.GetComponent<secondBossProjectile>();
+            newProjectileScript.canSplit = false;
+        }
+
+        Destroy(gameObject); 
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            int damage = Random.Range(minDamage, maxDamage + 1); 
+            int damage = Random.Range(minDamage, maxDamage + 1);
             collision.gameObject.GetComponent<PlayerMovement>().takeDamage(damage);
         }
         if (collision.gameObject.name != "Boss")

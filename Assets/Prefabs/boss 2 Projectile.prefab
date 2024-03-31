@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpeed: -1
-  maxSpeed: -25
+  maxSpeed: -15
   projectileSprites:
   - {fileID: 960240630, guid: f1cb84c5ab73be5458dbfaac304ac8a3, type: 3}
   - {fileID: 76393354, guid: f1cb84c5ab73be5458dbfaac304ac8a3, type: 3}
@@ -146,4 +146,12 @@ MonoBehaviour:
   - {fileID: -227725653, guid: 5d7f96a51ab25ba46b3d48740916b555, type: 3}
   - {fileID: 928428401, guid: 5d7f96a51ab25ba46b3d48740916b555, type: 3}
   - {fileID: 2068276206, guid: 5d7f96a51ab25ba46b3d48740916b555, type: 3}
+  - {fileID: -1781926323, guid: a3c1eddaaf75f7543b7456c445d7d4cc, type: 3}
+  - {fileID: -284191660, guid: a3c1eddaaf75f7543b7456c445d7d4cc, type: 3}
+  - {fileID: -717153239, guid: a3c1eddaaf75f7543b7456c445d7d4cc, type: 3}
+  - {fileID: 2068276206, guid: 5d7f96a51ab25ba46b3d48740916b555, type: 3}
+  minDamage: 1
+  maxDamage: 8
+  splitDistance: 5
+  canSplit: 1
   lifespan: 2
