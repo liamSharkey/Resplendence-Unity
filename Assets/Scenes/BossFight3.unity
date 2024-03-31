@@ -23202,7 +23202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Conquered the Reflection of Sadness!
+  m_text: You Conquered the Reflection of Shame!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ae3b48673367a5479db2f32c6c8a398, type: 2}
   m_sharedMaterial: {fileID: -3136516005023973959, guid: 3ae3b48673367a5479db2f32c6c8a398, type: 2}
