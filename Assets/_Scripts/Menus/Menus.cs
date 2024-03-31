@@ -9,6 +9,7 @@ public class Menus : MonoBehaviour
 {
     public GameObject levelChangerObject;
     private LevelChanger levelchanger;
+    public AudioSource source;
 
     public void Start()
     {
@@ -22,6 +23,7 @@ public class Menus : MonoBehaviour
 
     public void Menu()
     {
+        source.Play();
         changeSceneTo("Title");
         //SceneManager.LoadScene("Title");
     }
@@ -33,17 +35,19 @@ public class Menus : MonoBehaviour
 
     public void ToTavern()
     {
+        source.Play();
         changeSceneTo("TavernScene");
         //SceneManager.LoadScene("TavernScene");
     }
 
     public void ResetProgress()
     {
+        source.Play();
         _GameManager.Reset();
     }
 
     private void changeSceneTo(string SceneName)
     {
-        levelchanger.fadeToLevelWithSelectNoise(SceneName);
+        levelchanger.FadeToLevel(SceneName);
     }
 }
