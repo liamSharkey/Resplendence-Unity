@@ -7,7 +7,7 @@ public class _GameManager : MonoBehaviour
 {
     public static int highestBossDefeated;
     public static int numberOfDefeatedBosses;
-    public static int totalNumberOfBosses = 1;
+    public static int totalNumberOfBosses = 2;
 
     public static bool isPaused = false;
 
@@ -37,7 +37,13 @@ public class _GameManager : MonoBehaviour
     [ContextMenu("Reset Bosses")]
     public static void Reset()
     {
-        PlayerPrefs.SetInt("Boss1", 0);
+        PlayerPrefs.SetInt("HighestBossDefeated", 0);
+    }
+
+    [ContextMenu("Get Current Highest Boss Beaten")]
+    public void getCurrentHighestBoss()
+    {
+        Debug.Log(PlayerPrefs.GetInt("HighestBossDefeated"));
     }
 
     public static bool allBossesDefeated()

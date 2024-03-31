@@ -10,17 +10,30 @@ public class bossMirrorBehaviour : MonoBehaviour
     public GameObject UIInstruction;
     public GameObject UIFinished;
 
+    private bool allBossesDefeated;
+
     // Update is called once per frame
     void Update()
     {
-        mirror.SetActive(inRange && ! _GameManager.allBossesDefeated());
-        UIInstruction.SetActive(inRange && !_GameManager.allBossesDefeated());
-
-        UIFinished.SetActive(inRange && _GameManager.allBossesDefeated());
-
-        if (Input.GetKeyUp("e") && inRange && !_GameManager.allBossesDefeated())
+        if (_GameManager.highestBossDefeated < _GameManager.totalNumberOfBosses)
         {
-            SceneManager.LoadScene("BossFight1");
+            allBossesDefeated = false;
+        }
+        else
+        {
+            allBossesDefeated = true;
+        }
+
+
+        mirror.SetActive(inRange && !allBossesDefeated);
+        UIInstruction.SetActive(inRange && !allBossesDefeated);
+
+        UIFinished.SetActive(inRange && allBossesDefeated);
+
+        if (Input.GetKeyDown(KeyCode.E) && inRange && !allBossesDefeated)
+        {
+            // loads the next boss based on index, using boss defeated tracker. +2 for two scenes that come before the first boss scene
+            SceneManager.LoadScene(_GameManager.highestBossDefeated + 2);
         }
     }
 
