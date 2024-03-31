@@ -17542,8 +17542,8 @@ MonoBehaviour:
   bossProjectile: {fileID: 6220378273567182331, guid: b1c11072f560c41c3a01a29c703093f9, type: 3}
   player: {fileID: 583646362}
   moveTime: 4
-  health: 40
-  maxHealth: 40
+  health: 400
+  maxHealth: 400
   deathTime: 6
   bossHealthBar: {fileID: 1910634291}
   victoryScreen: {fileID: 1137608307}
