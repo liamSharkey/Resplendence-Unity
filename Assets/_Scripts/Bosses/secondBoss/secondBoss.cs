@@ -10,12 +10,15 @@ public class secondBoss : Boss
     private Vector3 newPosition; // The new position the boss is moving towards.
     private float withinRange = 2; // The range within which the boss considers itself to have reached its destination.
 
+    private float lastSizeChangeTime;
+    public float sizeChangeDelay = 0.25f;
+
     // Start is called before the first frame update.
     void Start()
     {
         bossNumber = 2; // Identifier for the boss.
-        movementSpeed = 7; // Speed at which the boss moves.
-        fireTime = 0.5f; // Time interval between firing projectiles.
+        movementSpeed = 5; // Speed at which the boss moves.
+        fireTime = 1.5f; // Time interval between firing projectiles.
         moveTime = 2f; // Time interval between moving to a new position.
         maxHealth = 600; // Maximum health of the boss.
         UniversalStart(); // Calls the start function from the parent Boss class.
@@ -33,9 +36,7 @@ public class secondBoss : Boss
         {
             lastMoved = Time.time;
             moving = true;
-            newPosition = !inPhaseTwo ?
-                new Vector3(UnityEngine.Random.Range(-13f, 13f), UnityEngine.Random.Range(8f, 20f), 0) :
-                new Vector3(UnityEngine.Random.Range(playerTransform.position.x - 3f, playerTransform.position.x + 3f), UnityEngine.Random.Range(playerTransform.position.y - 3, playerTransform.position.y + 3f), 0);
+            newPosition = new Vector3(UnityEngine.Random.Range(-13f, 13f), UnityEngine.Random.Range(8f, 20f), 0);
         }
 
         if (moving)
@@ -54,10 +55,11 @@ public class secondBoss : Boss
 
         if (inPhaseTwo)
         {
-            // Random size changes
-            if (UnityEngine.Random.Range(0, 100) < 5) // 5% chance to change size every frame
+            // Random size changes with a delay
+            if (Time.time - lastSizeChangeTime > sizeChangeDelay && UnityEngine.Random.Range(0, 100) < 5)
             {
-                float newSize = UnityEngine.Random.Range(0.2f, 1.8f); // Random size between 0.8 and 1.2 times original size
+                lastSizeChangeTime = Time.time;
+                float newSize = UnityEngine.Random.Range(0.3f, 1.7f);
                 transform.localScale = new Vector3(newSize, newSize, 1);
             }
         }

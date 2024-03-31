@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class Projectiles : MonoBehaviour
@@ -56,6 +57,10 @@ public class Projectiles : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Statue s = collision.GetComponent<Statue>();
+        if(s != null){
+            StartCoroutine(s.Die());
+        }
         if (collision.gameObject.name == "Boss")
         {
             collision.gameObject.GetComponent<Boss>().health -= damage;
