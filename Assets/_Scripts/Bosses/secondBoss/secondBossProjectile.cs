@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class secondBossProjectile : MonoBehaviour
 {
-    public float minSpeed = -3;
-    public float maxSpeed = -15;
+    public float minSpeed = -4;
+    public float maxSpeed = -12;
     public Sprite[] projectileSprites;
 
     public int minDamage = 1;
-    public int maxDamage = 8;
+    public int maxDamage = 7;
 
     public float splitDistance = 5f; 
     public bool canSplit = true; 

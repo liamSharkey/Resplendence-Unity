@@ -17538,14 +17538,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireTime: 0.2
+  movementSpeed: 7
   bossProjectile: {fileID: 903726096729985332, guid: 189f95330ef03e94fb04f9ba75b39d3c, type: 3}
   player: {fileID: 583646362}
   moveTime: 3
-  health: 4
-  maxHealth: 4
+  health: 400
+  maxHealth: 400
   deathTime: 6
   bossHealthBar: {fileID: 1910634291}
   victoryScreen: {fileID: 1137608307}
+  playerTransform: {fileID: 0}
+  animator: {fileID: 0}
+  capsuleCollider: {fileID: 0}
+  lastMoved: 0
+  inPhaseTwo: 0
+  bossNumber: 0
+  lastFired: 0
+  dead: 0
 --- !u!1 &264089097
 GameObject:
   m_ObjectHideFlags: 0
@@ -17683,6 +17692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelChangerObject: {fileID: 680198384}
+  source: {fileID: 0}
 --- !u!1 &422412749
 GameObject:
   m_ObjectHideFlags: 0
@@ -22648,7 +22658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1739713298
 AudioSource:
   m_ObjectHideFlags: 0

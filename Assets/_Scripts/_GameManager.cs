@@ -13,10 +13,16 @@ public class _GameManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
+        Time.timeScale = 1.0f;
         // PlayerPrefs : HighestBossDefeated
         highestBossDefeated = PlayerPrefs.GetInt("HighestBossDefeated");
+    }
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame

@@ -5,27 +5,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class firstBoss : Boss
-{
-    
-    
+{  
     private bool moving = false;
     private Vector3 newPosition;
 
     private float withinRange = 2;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
         bossNumber = 1;
-        movementSpeed = 7;
-        fireTime = 1f;
-        moveTime = 4f;
-        maxHealth = 400;
         UniversalStart();
-        
-
     }
 
     // Update is called once per frame
