@@ -100,6 +100,15 @@ public class secondBoss : Boss
         transform.Translate(new Vector3(Time.deltaTime * xMovementSign * movementSpeed, Time.deltaTime * yMovementSign * movementSpeed, 0));
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            // Damage the player
+            collision.GetComponent<PlayerMovement>().takeDamage(5);
+        }
+    }
+
     // Coroutine for handling the boss's death.
     public IEnumerator die()
     {
