@@ -75,7 +75,6 @@ public class NPCDialogue : MonoBehaviour
         }
         else
         {
-            Debug.Log("the the the the the");
             if (isKeyDialogue)
             {
                 saveDialogueProgress(currentKeyDialogue);
@@ -122,7 +121,6 @@ public class NPCDialogue : MonoBehaviour
 
     public void saveDialogueProgress(int newHighestDialogue)
     {
-        Debug.Log("Setting " + NPCName + " to: " + newHighestDialogue.ToString());
         PlayerPrefs.SetInt(NPCName, newHighestDialogue);
         PlayerPrefs.Save();
     }
@@ -130,7 +128,6 @@ public class NPCDialogue : MonoBehaviour
     public int getDialogueProgress()
     {
         int progress = PlayerPrefs.GetInt(NPCName);
-        Debug.Log("get dialog progress method gets: " + progress.ToString());
 
         // sets base player preference for dialogue if none exists
         if (progress == null)
@@ -145,7 +142,6 @@ public class NPCDialogue : MonoBehaviour
     public void resetDialogueProgress()
     {
         PlayerPrefs.SetInt(NPCName, -1);
-        Debug.Log(getDialogueProgress());
         PlayerPrefs.Save();
     }
 

@@ -33,7 +33,6 @@ public class PinkLady : NPCDialogue
     void Start()
     {
         dialogueProgress = getDialogueProgress();
-        Debug.Log(dialogueProgress);
 
         // Set Base params
         defaultDialogueSet[0] = "Beautiful day we're having, isn't it?";
@@ -114,9 +113,9 @@ public class PinkLady : NPCDialogue
             }
         }
 
-        Debug.Log("Bosses defeated: " + _GameManager.highestBossDefeated.ToString());
-        Debug.Log("Key Dialogue to address: " + keyDialogue.ToString());
-        Debug.Log("Dialogue set associated with this: " + dialogueSet[0]);
-        Debug.Log("This is a key dialogue set: " + isKeyDialogue.ToString());
+        //Debug.Log("Bosses defeated: " + _GameManager.highestBossDefeated.ToString());
+        //Debug.Log("Key Dialogue to address: " + keyDialogue.ToString());
+        //Debug.Log("Dialogue set associated with this: " + dialogueSet[0]);
+        //Debug.Log("This is a key dialogue set: " + isKeyDialogue.ToString());
     }
 }
