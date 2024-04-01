@@ -140,7 +140,13 @@ public class FourthBoss : Boss
         spriteRenderer.color = originalColor;
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerMovement>().takeDamage(6);
+        }
+    }
 
     private void FireProjectile()
     {
