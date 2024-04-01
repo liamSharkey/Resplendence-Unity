@@ -20,7 +20,7 @@ public class secondBoss : Boss
         movementSpeed = 5; // Speed at which the boss moves.
         fireTime = 1.5f; // Time interval between firing projectiles.
         moveTime = 2f; // Time interval between moving to a new position.
-        maxHealth = 600; // Maximum health of the boss.
+        maxHealth = 400; // Maximum health of the boss.
         UniversalStart(); // Calls the start function from the parent Boss class.
     }
 
