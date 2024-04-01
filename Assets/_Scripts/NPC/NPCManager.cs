@@ -7,6 +7,11 @@ public class NPCManager : MonoBehaviour
     private int tavernSetup;
 
     public GameObject pinkLady;
+    public GameObject greenMan;
+
+    // translation values for different seats in the tavern
+    private Vector3 firstSeat = new Vector3(-3.51f, 1.543f, 0);
+    private Vector3 secondSeat = new Vector3(6.5f, -2.35f, 0);
 
     // ctrl+k, ctrl+d to autoformat
     void Start()
@@ -16,13 +21,17 @@ public class NPCManager : MonoBehaviour
         switch (tavernSetup)
         {
             case 0:
-                pinkLady.transform.position = new Vector3(-3.51f, 1.543f, 0); 
+                pinkLady.transform.position = firstSeat;
+                greenMan.SetActive(false);
                 break;
             case 1:
                 pinkLady.SetActive(false);
+                greenMan.transform.position = firstSeat;
+
                 break;
             case 2:
-                pinkLady.SetActive(false);
+                pinkLady.transform.position = firstSeat;
+                greenMan.transform.position = secondSeat;
                 break;
             case 3:
                 pinkLady.SetActive(false);

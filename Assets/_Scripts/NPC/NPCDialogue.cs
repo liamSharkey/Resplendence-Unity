@@ -58,9 +58,6 @@ public class NPCDialogue : MonoBehaviour
                 if (Input.GetMouseButtonDown(0)) { NextLine(); }
             }
         }
-        
-
-        dialogueToolTip.SetActive(playerIsClose && !dialoguePanel.activeInHierarchy);
 
     }
 
@@ -107,6 +104,7 @@ public class NPCDialogue : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerIsClose = true;
+            dialogueToolTip.SetActive(playerIsClose && !dialoguePanel.activeInHierarchy);
         }
     }
 
@@ -115,6 +113,7 @@ public class NPCDialogue : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerIsClose = false;
+            dialogueToolTip.SetActive(playerIsClose && !dialoguePanel.activeInHierarchy);
             zeroText();
         }
     }

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinkLady : NPCDialogue
+public class TutorialBoy : NPCDialogue
 {
-    private string[] firstDialogueSet = { "Hello! My name is Delores and you must be Mani.",
-        "I've heard so many great things about the Ramblin' Rumbler but never had the pleasure of stopping by before today.",
-        "Say, you must see many travellers coming in and out of here, do you have any interesting tales passed on by those heroes?" };
+    private string[] firstDialogueSet = { "Hey Mani, how've you been?",
+        "Listen, I know you don't believe in any of the sorcery from the stories I've told you, but I'm telling you that mirror I gave you is something special.",
+        "All you have to do is get real close and look into it and it'll give you a real test of strength",
+        "Just remember, don't be reckless. You're not going to be able to fend anything off by just running around aimlessly. The longer you're calm, the stronger you'll be.",
+        "If you do want to fight back though, try the arrow keys. They'll help you channel your tranquility and conquer the demons."};
 
     private string[] secondDialogueSet = { "Mani! You seem to have a new glow about you!",
         "Now I understand you may not be so eager to see me, but I just can't seem to leave its too nice of a place and the food is...",
@@ -27,7 +29,7 @@ public class PinkLady : NPCDialogue
 
     private void Awake()
     {
-        NPCName = "Delores";
+        NPCName = "Ozzy";
     }
 
     void Start()
@@ -35,7 +37,7 @@ public class PinkLady : NPCDialogue
         dialogueProgress = getDialogueProgress();
 
         // Set Base params
-        defaultDialogueSet[0] = "Beautiful day we're having, isn't it?";
+        defaultDialogueSet[0] = "Good luck Mani, I hope you find what you need in there.";
 
         // based on most recent boss defeted, determine next key piece of dialogue
         switch (_GameManager.highestBossDefeated)

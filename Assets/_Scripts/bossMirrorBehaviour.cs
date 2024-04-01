@@ -11,6 +11,7 @@ public class bossMirrorBehaviour : MonoBehaviour
     public GameObject UIFinished;
 
     private bool allBossesDefeated;
+    private bool canFightNextBoss;
 
     // Update is called once per frame
     void Update()
@@ -24,9 +25,11 @@ public class bossMirrorBehaviour : MonoBehaviour
             allBossesDefeated = true;
         }
 
+        // in order for the mirror to work, you have to be in range, not have defeated all the bosses, and have talked to the tutorial NPC at least once
+        canFightNextBoss = inRange && !allBossesDefeated && (PlayerPrefs.GetInt("Ozzy") > 0);
 
-        mirror.SetActive(inRange && !allBossesDefeated);
-        UIInstruction.SetActive(inRange && !allBossesDefeated);
+        mirror.SetActive(canFightNextBoss);
+        UIInstruction.SetActive(canFightNextBoss);
 
         UIFinished.SetActive(inRange && allBossesDefeated);
 
