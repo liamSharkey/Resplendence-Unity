@@ -17465,7 +17465,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1525782968, guid: 7b7772fb5fd52ae4a9de81c11306ba7f, type: 3}
-  m_Color: {r: 0.22075468, g: 0.7937708, b: 1, a: 0.59607846}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.59607846}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17539,14 +17539,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireTime: 0.2
   movementSpeed: 4
-  bossProjectile: {fileID: 0}
-  player: {fileID: 0}
+  bossProjectile: {fileID: 903726096729985332, guid: be11ff62a1d0f6b458442d2b76a1bbbe, type: 3}
+  player: {fileID: 583646362}
   moveTime: 2
   health: 4
   maxHealth: 4
   deathTime: 6
-  bossHealthBar: {fileID: 0}
-  victoryScreen: {fileID: 0}
+  bossHealthBar: {fileID: 1910634291}
+  victoryScreen: {fileID: 1137608307}
   playerTransform: {fileID: 0}
   animator: {fileID: 0}
   capsuleCollider: {fileID: 0}
@@ -23459,7 +23459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Conquered the Reflection of Sadness!
+  m_text: You Conquered the Reflection of Treachery!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ae3b48673367a5479db2f32c6c8a398, type: 2}
   m_sharedMaterial: {fileID: -3136516005023973959, guid: 3ae3b48673367a5479db2f32c6c8a398, type: 2}

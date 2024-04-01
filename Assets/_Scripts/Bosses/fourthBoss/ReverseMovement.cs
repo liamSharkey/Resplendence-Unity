@@ -4,7 +4,7 @@ public class ReverseMovement : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private bool isReversed = false;
-    private bool isActive = false; // Flag to indicate whether the effect is currently active
+    private bool isActive = false; 
 
     void Start()
     {
@@ -13,11 +13,11 @@ public class ReverseMovement : MonoBehaviour
 
     public void ActivateReverse(float duration)
     {
-        if (!isActive) // Only activate if the effect is not already active
+        if (!isActive) 
         {
             isReversed = true;
-            isActive = true; // Set the flag to indicate that the effect is active
-            playerMovement.movementSpeed *= -1; // Reverse the movement speed
+            isActive = true; 
+            playerMovement.movementSpeed *= -1; 
             Invoke(nameof(DeactivateReverse), duration);
         }
     }
@@ -25,7 +25,7 @@ public class ReverseMovement : MonoBehaviour
     private void DeactivateReverse()
     {
         isReversed = false;
-        playerMovement.movementSpeed *= -1; // Reset the movement speed back to normal
-        isActive = false; // Reset the flag to indicate that the effect is no longer active
+        playerMovement.movementSpeed *= -1; 
+        isActive = false; 
     }
 }
