@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Set cost to either big projectile cost or regular dependent on shift
         shiftPressed = Input.GetKey("left shift");
-        ctrlPressed = Input.GetKey(KeyCode.LeftControl);
+        ctrlPressed = Input.GetKey(KeyCode.Space);
         if (shiftPressed) { cost = bigFireCost; }
         else if (ctrlPressed) { cost = ultFireCost;  }
         else
