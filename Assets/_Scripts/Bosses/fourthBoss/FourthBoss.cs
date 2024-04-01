@@ -117,7 +117,19 @@ public class FourthBoss : Boss
 
         spriteRenderer.color = transparentColor;
 
-        retreatPosition = transform.position - (playerTransform.position - transform.position).normalized * 5f;
+        Vector3 direction = (transform.position - playerTransform.position).normalized;
+        retreatPosition = transform.position + direction * 5f;
+
+        Camera mainCamera = Camera.main;
+        Vector2 screenBottomLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, mainCamera.nearClipPlane));
+        Vector2 screenTopRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, mainCamera.nearClipPlane));
+
+        float bufferX = spriteRenderer.bounds.size.x / 2;
+        float bufferY = spriteRenderer.bounds.size.y / 2;
+
+        retreatPosition.x = Mathf.Clamp(retreatPosition.x, screenBottomLeft.x + bufferX, screenTopRight.x - bufferX);
+        retreatPosition.y = Mathf.Clamp(retreatPosition.y, screenBottomLeft.y + bufferY, screenTopRight.y - bufferY);
+
         while (Time.time - startTime < 1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, retreatPosition, retreatSpeed * Time.deltaTime);
@@ -127,6 +139,8 @@ public class FourthBoss : Boss
         transform.localScale = Vector3.one;
         spriteRenderer.color = originalColor;
     }
+
+
 
     private void FireProjectile()
     {
