@@ -36,7 +36,7 @@ public class firstBoss : Boss
             }
             else
             {
-                newPosition = new Vector3(UnityEngine.Random.Range(playerTransform.position.x - 3f, playerTransform.position.x + 3f), UnityEngine.Random.Range(playerTransform.position.y -3, playerTransform.position.y + 3f), 0);
+                newPosition = new Vector3(UnityEngine.Random.Range(playerTransform.position.x - 1f, playerTransform.position.x + 1f), UnityEngine.Random.Range(playerTransform.position.y -1, playerTransform.position.y + 1f), 0);
             }
         }
 
