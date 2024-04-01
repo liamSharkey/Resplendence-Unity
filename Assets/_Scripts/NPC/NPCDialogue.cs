@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,14 +14,24 @@ public class NPCDialogue : MonoBehaviour
     public GameObject dialogueToolTip;
 
     public string[] dialogueSet;
-    private int index;  
+    public string[] defaultDialogueSet = new string[1];
 
+    public int dialogueProgress;
+    public int currentKeyDialogue;
+
+    public bool isKeyDialogue;
+
+    private int index;  
     public float wordSpeed;
     public bool playerIsClose = false;
+
+    public bool isQuestion;
+
+
     public string NPCName;
+    public int NPCAffection;
 
     public GameObject contButton;
-
 
 
     private void Update()
@@ -39,11 +50,15 @@ public class NPCDialogue : MonoBehaviour
             }
         }
 
-        if (dialogueText.text == dialogueSet[index])
+        if(dialogueSet.Length > 0)
         {
-            contButton.SetActive(true);
-            if (Input.GetMouseButtonDown(0)) { NextLine(); }
+            if (dialogueText.text == dialogueSet[index])
+            {
+                contButton.SetActive(true);
+                if (Input.GetMouseButtonDown(0)) { NextLine(); }
+            }
         }
+        
 
         dialogueToolTip.SetActive(playerIsClose && !dialoguePanel.activeInHierarchy);
 
@@ -60,6 +75,13 @@ public class NPCDialogue : MonoBehaviour
         }
         else
         {
+            if (isKeyDialogue)
+            {
+                saveDialogueProgress(currentKeyDialogue);
+                dialogueProgress = getDialogueProgress();
+                isKeyDialogue = false;
+                dialogueSet = defaultDialogueSet;
+            }
             zeroText();
         }
     }
@@ -95,6 +117,32 @@ public class NPCDialogue : MonoBehaviour
             playerIsClose = false;
             zeroText();
         }
+    }
+
+    public void saveDialogueProgress(int newHighestDialogue)
+    {
+        PlayerPrefs.SetInt(NPCName, newHighestDialogue);
+        PlayerPrefs.Save();
+    }
+
+    public int getDialogueProgress()
+    {
+        int progress = PlayerPrefs.GetInt(NPCName);
+
+        // sets base player preference for dialogue if none exists
+        if (progress == null)
+        {
+            progress = -1;
+        }
+        
+        return progress;
+    }
+
+    [ContextMenu("Reset Dialogue Progress")]
+    public void resetDialogueProgress()
+    {
+        PlayerPrefs.SetInt(NPCName, -1);
+        PlayerPrefs.Save();
     }
 
 }
