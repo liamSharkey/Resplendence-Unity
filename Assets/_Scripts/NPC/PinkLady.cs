@@ -41,40 +41,40 @@ public class PinkLady : NPCDialogue
         switch (_GameManager.highestBossDefeated)
         {
             default:
-                currentKeyDialogue = 0;
+                currentKeyDialogue = 1;
                 break;
             case 0:
-                currentKeyDialogue = 0;
+                currentKeyDialogue = 1;
                 break;
             case 1:
-                currentKeyDialogue = 0;
+                currentKeyDialogue = 1;
                 break;
             case 2:
-                currentKeyDialogue = 1;
+                currentKeyDialogue = 2;
                 break;
             case 3:
-                currentKeyDialogue = 1;
+                currentKeyDialogue = 2;
                 break;
             case 4:
-                currentKeyDialogue = 1;
+                currentKeyDialogue = 2;
                 break;
             case 5:
-                currentKeyDialogue = 2;
+                currentKeyDialogue = 3;
                 break;
             case 6:
-                currentKeyDialogue = 2;
+                currentKeyDialogue = 3;
                 break;
             case 7:
-                currentKeyDialogue = 3;
+                currentKeyDialogue = 4;
                 break;
             case 8:
-                currentKeyDialogue = 3;
+                currentKeyDialogue = 4;
                 break;
             case 9:
-                currentKeyDialogue = 3;
+                currentKeyDialogue = 4;
                 break;
             case 10:
-                currentKeyDialogue = 3;
+                currentKeyDialogue = 4;
                 break;
         }
         // set the dialogue set to be the accurate dialogue set
@@ -98,16 +98,16 @@ public class PinkLady : NPCDialogue
                 default:
                     dialogueSet = defaultDialogueSet;
                     break;
-                case 0:
+                case 1:
                     dialogueSet = firstDialogueSet;
                     break;
-                case 1:
+                case 2:
                     dialogueSet = secondDialogueSet;
                     break;
-                case 2:
+                case 3:
                     dialogueSet = thirdDialogueSet;
                     break;
-                case 3:
+                case 4:
                     dialogueSet = fourthDialogueSet;
                     break;
             }

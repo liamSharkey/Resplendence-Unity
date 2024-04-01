@@ -127,15 +127,7 @@ public class NPCDialogue : MonoBehaviour
 
     public int getDialogueProgress()
     {
-        int progress = PlayerPrefs.GetInt(NPCName);
-        Debug.Log(progress);
-
-        // sets base player preference for dialogue if none exists
-        if (progress == null)
-        {
-            progress = -1;
-        }
-        
+        int progress = PlayerPrefs.GetInt(NPCName);        
         return progress;
     }
 
