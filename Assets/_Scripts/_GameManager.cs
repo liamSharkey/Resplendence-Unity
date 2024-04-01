@@ -43,7 +43,7 @@ public class _GameManager : MonoBehaviour
     [ContextMenu("Reset Bosses")]
     public static void Reset()
     {
-        PlayerPrefs.SetInt("HighestBossDefeated", 0);
+        PlayerPrefs.DeleteAll();
     }
 
     [ContextMenu("Get Current Highest Boss Beaten")]
