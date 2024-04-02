@@ -20,12 +20,17 @@ public class IllusionScript : MonoBehaviour
     private float lastShotTime;
 
     private GameObject shot;
+    public GameObject boss;
+    private EighthBoss bossScript;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+
+        boss = GameObject.FindGameObjectWithTag("Boss");
+        bossScript = boss.GetComponent<EighthBoss>();
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (sprites.Length > 0)
@@ -55,6 +60,8 @@ public class IllusionScript : MonoBehaviour
     public IEnumerator Die()
     {
         Destroy(shot);
+        bossScript.illusionKilled();
+
         capsuleCollider.enabled = false;
         animator.SetBool("Break", true);
         yield return new WaitForSeconds(0);

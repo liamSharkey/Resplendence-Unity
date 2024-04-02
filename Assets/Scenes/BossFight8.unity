@@ -17370,7 +17370,7 @@ GameObject:
   - component: {fileID: 260299879}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17556,6 +17556,8 @@ MonoBehaviour:
   lastFired: 0
   dead: 0
   illusionPrefab: {fileID: 1326268795956514463, guid: 27ede65e8ea04ae4d8adb2cad9b98e87, type: 3}
+  numberOfIllusionsOnScreen: 0
+  maxNumberOfIllusions: 0
 --- !u!1 &264089097
 GameObject:
   m_ObjectHideFlags: 0

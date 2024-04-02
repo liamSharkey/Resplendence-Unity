@@ -11,16 +11,20 @@ public class EighthBoss : Boss
     public GameObject illusionPrefab;
 
     private float lastIllusionSpawnedTime = 0f;
-    private float illusionSpawnInterval = 3f;
+    private float illusionSpawnInterval = 6f;
     private float withinRange = 2;
 
     private float shootCooldownTime = 2f;
     private float lastShootTime = 0f;
     private bool isOnCooldown = false;
 
+    public int numberOfIllusionsOnScreen;
+    public int maxNumberOfIllusions;
+
     void Start()
     {
         bossNumber = 8;
+        maxNumberOfIllusions = 3;
         UniversalStart();
     }
 
@@ -44,7 +48,11 @@ public class EighthBoss : Boss
             }
             while (Vector3.Distance(spawnPosition, playerTransform.position) < minDistanceFromPlayer);
 
-            Instantiate(illusionPrefab, spawnPosition, Quaternion.identity);
+            if (numberOfIllusionsOnScreen < maxNumberOfIllusions)
+            {
+                numberOfIllusionsOnScreen += 1;
+                Instantiate(illusionPrefab, spawnPosition, Quaternion.identity);
+            }      
         }
     }
 
@@ -53,7 +61,10 @@ public class EighthBoss : Boss
         if (Time.time - lastIllusionSpawnedTime > illusionSpawnInterval && !dead)
         {
             lastIllusionSpawnedTime = Time.time;
-            SpawnIllusion();
+            if (numberOfIllusionsOnScreen < maxNumberOfIllusions)
+            {
+                SpawnIllusion();
+            }
         }
 
         if (Time.time - lastFired > fireTime && !dead && !isOnCooldown)
@@ -97,6 +108,11 @@ public class EighthBoss : Boss
         if (health <= 0 && !dead)
         {
             StartCoroutine(die());
+        }
+
+        if (inPhaseTwo)
+        {
+            maxNumberOfIllusions = 5;
         }
     }
 
@@ -170,6 +186,11 @@ public class EighthBoss : Boss
         yield return new WaitForSeconds(deathTime);
 
         SceneManager.LoadScene("TavernScene");
+    }
+
+    public void illusionKilled()
+    {
+        numberOfIllusionsOnScreen -= 1;
     }
 
 }
