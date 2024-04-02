@@ -23,14 +23,11 @@ public class Menus : MonoBehaviour
 
     public void Menu()
     {
-        source.Play();
         changeSceneTo("Title");
         //SceneManager.LoadScene("Title");
     }
     public void MenuFromPause()
     {
-        Time.timeScale = 1f;
-        source.Play();
         SceneManager.LoadScene("Title");
     }
 
