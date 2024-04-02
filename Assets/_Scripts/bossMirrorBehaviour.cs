@@ -26,7 +26,7 @@ public class bossMirrorBehaviour : MonoBehaviour
         }
 
         // in order for the mirror to work, you have to be in range, not have defeated all the bosses, and have talked to the tutorial NPC at least once
-        canFightNextBoss = inRange && !allBossesDefeated && (PlayerPrefs.GetInt("Ozzy") > 0);
+        canFightNextBoss = inRange && !allBossesDefeated && (PlayerPrefs.GetInt("Ozzy") > 0) && (PlayerPrefs.GetInt("Yatso") > 0);
 
         mirror.SetActive(canFightNextBoss);
         UIInstruction.SetActive(canFightNextBoss);

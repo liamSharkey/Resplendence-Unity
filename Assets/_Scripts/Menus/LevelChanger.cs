@@ -22,27 +22,28 @@ public class LevelChanger : MonoBehaviour
     private int entryTextToWrite;
     private string[] tavernEntryDialogues = { "Great, another horrible day. Time to see what kind of gruelish beings poured into my tavern today.",
         "Ugh here we go again.",
+        "Another day of nothing.",
         "I guess I'd better get up.",
         "I wonder if more people have arrived.",
-        "Welp, better get a start to the day!",
-        "I hope my favourite customers are here",
-        "Thank goodness for another beautiful day!",
-        "Thank goodness for another beautiful day!",
+        "I hope my favourite customers are here. Maybe Olaf will be here...",
+        "Welp, better get a start to the day.",
+        "Who knows, maybe it'll be a good day.",
+        "I hope Ozzy's here today!",
         "Thank goodness for another beautiful day!",
         "Thank goodness for another beautiful day!",
         "Thank goodness for another beautiful day!",};
 
     private string[] tavernEntryHeaders = { "Mani",
+        "Mani (The next morning)",
+        "Mani (The next morning)",
         "Mani (a few days later)",
         "Mani (a few days later)",
         "Mani (a few days later)",
         "Mani (a few days later)",
-        "Mani (a few days later)",
-        "Mani (a few days later)",
-        "Mani (a few days later)",
-        "Mani (a few days later)",
-        "Mani (a few days later)",
-        "Mani (a few days later)"};
+        "Mani (a few weeks later)",
+        "Mani (a few weeks later)",
+        "Mani (a few weeks later)",
+        "Mani (a few weeks later)"};
 
     private void Start()
     {

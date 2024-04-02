@@ -7,7 +7,7 @@ public class Olaf : NPCDialogue
     private string[] firstDialogueSet = { "Mani? Olaf.",
     "Anyone gets in your way, I'll take care of them."};
 
-    private string[] secondDialogueSet = { "Can't stand that Bruce guy",
+    private string[] secondDialogueSet = { "Can't stand that Bruce guy.",
     "By the way, working on my nexy big feat of strength.",
     "Talk to you in a few days, keep an eye out for when I'm next in here."};
 

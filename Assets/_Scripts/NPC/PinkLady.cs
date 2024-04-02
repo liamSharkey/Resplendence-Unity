@@ -14,7 +14,7 @@ public class PinkLady : NPCDialogue
         "You see, I've always dreamt of being an adventurer like the other folks in here, but I've never known how.",
         "But I've heard, if you give Beck a chance, he'll take you on an adventure you won't forget! I can't wait to meet him and change my life!"};
 
-    private string[] thirdDialogueSet = { "...oh, hi Mani",
+    private string[] thirdDialogueSet = { "...oh, hi Mani.",
         "I know I know, when did Delores turn into such a downer?",
         "I've been waiting for so long and no one has come to see me. I'm beginning to have second thoughts about this adventure of mine.",
         "I just can't help but seeing all these heroic folk in here and thinking: \"how could I ever do that?\"",

@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class Milo : NPCDialogue
 {
-    private string[] firstDialogueSet = { "first Milo" };
+    private string[] firstDialogueSet = { "Oh man, are you Mani? The owner of the Ramblin' Rumbler?",
+    "Oh this is great! I'm such a huge fan, people all over the world talk about how great this place is.",
+    "I can't believe its really you! You see I'm an adventurer like many of the other folks in here.",
+    "But no matter who I've talked to, everyone says that this is the best place to rest up!",
+    "Thanks for what you do Mani."};
 
-    private string[] secondDialogueSet = { "second Milo" };
+    private string[] secondDialogueSet = { "Hey Mani, I'm thinking of retiring from the adventuring business.", 
+        "You see, as much as I love it, it seems like you're helping more people with your tavern than I ever have out there.",
+    "If you'd let me, I'd love to work for you for a bit and learn the ropes.",
+    "I don't know its probably stupid... Just think about it okay?"};
 
-    private string[] thirdDialogueSet = { "third Milo" };
+    private string[] thirdDialogueSet = { "Hey Mani, you thought about having me work here at all?",
+    "Oh, no. I get it, that's okay.",
+    "You got your own thing going here. Maybe I could start up my own place so I could help people the way you do..."};
 
-    private string[] fourthDialogueSet = { "fourth Milo"};
+    private string[] fourthDialogueSet = { "Well Mani, I'm doing it, I'm starting up my own place.",
+    "I'm gonna call it \"Beck's\", got a nice ring to it huh?",
+    "Oh I should explain, my real name is Beck, I just got a reputation that... warranted some change.",
+    "Anyways, don't worry I'm going far away, I won't be taking your business, but I wanted to thank you for inspiring me!",
+    "Hope you'll come visit some time! "};
 
     private void Awake()
     {
@@ -22,7 +35,7 @@ public class Milo : NPCDialogue
         dialogueProgress = getDialogueProgress();
 
         // Set Base params
-        defaultDialogueSet[0] = "deafult Milo";
+        defaultDialogueSet[0] = "Great to see you Mani, always brightens my day.";
 
         // based on most recent boss defeted, determine next key piece of dialogue
         switch (_GameManager.highestBossDefeated)
