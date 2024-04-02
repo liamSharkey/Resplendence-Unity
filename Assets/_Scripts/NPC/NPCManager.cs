@@ -8,6 +8,11 @@ public class NPCManager : MonoBehaviour
 
     public GameObject pinkLady;
     public GameObject greenMan;
+    public GameObject ozzy;
+    public GameObject bruce;
+    public GameObject olaf;
+    public GameObject yatso;
+    public GameObject milo;
 
     // translation values for different seats in the tavern
     private Vector3 firstSeat = new Vector3(-3.51f, 1.543f, 0);
@@ -35,27 +40,75 @@ public class NPCManager : MonoBehaviour
                 break;
             case 3:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
             case 4:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
             case 5:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
             case 6:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
             case 7:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
             case 8:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
             case 9:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
             case 10:
                 pinkLady.SetActive(false);
+                greenMan.SetActive(false);
+                ozzy.SetActive(false);
+                bruce.SetActive(false);
+                olaf.SetActive(false);
+                yatso.SetActive(false);
+                milo.SetActive(false);
                 break;
         }
         

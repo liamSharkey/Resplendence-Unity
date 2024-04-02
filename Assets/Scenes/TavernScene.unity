@@ -16812,6 +16812,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinkLady: {fileID: 301242304}
   greenMan: {fileID: 1609226455}
+  ozzy: {fileID: 1687327185}
+  bruce: {fileID: 0}
+  olaf: {fileID: 0}
+  yatso: {fileID: 0}
+  milo: {fileID: 0}
 --- !u!4 &1748073934
 Transform:
   m_ObjectHideFlags: 0
