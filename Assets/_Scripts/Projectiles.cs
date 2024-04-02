@@ -61,6 +61,11 @@ public class Projectiles : MonoBehaviour
         if(s != null){
             StartCoroutine(s.Die());
         }
+        IllusionScript I = collision.GetComponent<IllusionScript>();
+        if (I != null)
+        {
+            I.remove();
+        }
         if (collision.gameObject.name == "Boss")
         {
             collision.gameObject.GetComponent<Boss>().health -= damage;
