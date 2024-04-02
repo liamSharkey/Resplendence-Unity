@@ -26,9 +26,17 @@ public class LevelChanger : MonoBehaviour
         "I wonder if more people have arrived.",
         "Welp, better get a start to the day!",
         "I hope my favourite customers are here",
-        "Thank goodness for another beautiful day!"};
+        "Thank goodness for another beautiful day!",
+        "Thank goodness for another beautiful day!",
+        "Thank goodness for another beautiful day!",
+        "Thank goodness for another beautiful day!",
+        "Thank goodness for another beautiful day!",};
 
     private string[] tavernEntryHeaders = { "Mani",
+        "Mani (a few days later)",
+        "Mani (a few days later)",
+        "Mani (a few days later)",
+        "Mani (a few days later)",
         "Mani (a few days later)",
         "Mani (a few days later)",
         "Mani (a few days later)",
