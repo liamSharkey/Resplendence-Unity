@@ -47,6 +47,8 @@ public class SeventhBoss : Boss
 
     private IEnumerator BehaviorRoutine()
     {
+        yield return new WaitForSeconds(3f);
+
         while (!dead)
         {
             if (!inPhaseTwo)
