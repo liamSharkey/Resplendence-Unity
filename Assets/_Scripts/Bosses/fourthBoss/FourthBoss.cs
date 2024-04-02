@@ -23,7 +23,7 @@ public class FourthBoss : Boss
         movementSpeed = 7; 
         fireTime = 0.5f;
         moveTime = 2f; 
-        maxHealth = 10; 
+        maxHealth = 400; 
         UniversalStart(); 
     }
 
