@@ -20,7 +20,7 @@ public class LevelChanger : MonoBehaviour
     public float wordSpeed;
 
     private int entryTextToWrite;
-    private string[] tavernEntryDialogues = { "Great, another horrible day.",
+    private string[] tavernEntryDialogues = { "Great, another horrible day. Time to see what kind of gruelish beings poured into my tavern today.",
         "Ugh here we go again.",
         "I guess I'd better get up.",
         "I wonder if more people have arrived.",

@@ -2,32 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinkLady : NPCDialogue
+public class Yatso : NPCDialogue
 {
-    private string[] firstDialogueSet = { "Hello! My name is Delores and you must be Mani.",
-        "I've heard so many great things about the Ramblin' Rumbler but never had the pleasure of stopping by before today.",
-        "Say, you must see many travellers coming in and out of here, I'd love to hear some of their stories." };
+    private string[] firstDialogueSet = { "Oh goodness!",
+    "I'm sorry I don't mean to sound startled",
+    "I can't help but notice how unbalanced your spirit is! You would need to fight many demons to rid this curse.",
+    "I can sense Sadness, Foolishness, Shame, Treachery, Ignorance, Thirst, Fear, Delusion, Disgust and Fear within you.",
+    "You must do something to rid yourself of this!"};
 
-    private string[] secondDialogueSet = { "Mani! You seem to have a new glow about you!",
-        "Now I understand you may not be so eager to see me, but I just keep seeming to find myself here! Its too nice of a place and the food is...",
-        "Okay, I have a confession. The real reason I keep coming is that I'm supposed to meet this man named Beck.",
-        "You see, I've always dreamt of being an adventurer like the other folks in here, but I've never known how.",
-        "But I've heard, if you give Beck a chance, he'll take you on an adventure you won't forget! I can't wait to meet him and change my life!"};
+    private string[] secondDialogueSet = { "Second Yatso" };
 
-    private string[] thirdDialogueSet = { "...oh, hi Mani",
-        "I know I know, when did Delores turn into such a downer?",
-        "I've been waiting for so long and no one has come to see me. I'm beginning to have second thoughts about this adventure of mine.",
-        "I just can't help but seeing all these heroic folk in here and thinking: \"how could I ever do that?\"",
-        "Maybe its time to pack it up. He was probably never going to come anyway..."};
+    private string[] thirdDialogueSet = { "Third Yatso" };
 
-    private string[] fourthDialogueSet = { "Oh my, Mani! Its great to see you!",
-        "No, that man I was waiting for never came. But who cares. I've decided I'm going to figure out this adventuring stuff on my own.",
-        "I don't know what it is about you, but it just seems like you've changed so much in the last few weeks.",
-        "You've truly inspired me to make my own change. I'm going to be an adventurer! and no one can stop me."};
+    private string[] fourthDialogueSet = { "Fourth Yatso" };
 
     private void Awake()
     {
-        NPCName = "Delores";
+        NPCName = "Yatso";
     }
 
     void Start()
@@ -35,7 +26,7 @@ public class PinkLady : NPCDialogue
         dialogueProgress = getDialogueProgress();
 
         // Set Base params
-        defaultDialogueSet[0] = "Beautiful day we're having, isn't it?";
+        defaultDialogueSet[0] = "Gah! Still an unbalanced spirit!";
 
         // based on most recent boss defeted, determine next key piece of dialogue
         switch (_GameManager.highestBossDefeated)
@@ -46,16 +37,19 @@ public class PinkLady : NPCDialogue
             case 0:
                 currentKeyDialogue = 1;
                 break;
+            case 1:
+                currentKeyDialogue = 1;
+                break;
             case 2:
                 currentKeyDialogue = 2;
                 break;
             case 4:
                 currentKeyDialogue = 3;
                 break;
-            case 5:
-                currentKeyDialogue = 3;
-                break;
             case 8:
+                currentKeyDialogue = 4;
+                break;
+            case 9:
                 currentKeyDialogue = 4;
                 break;
         }
