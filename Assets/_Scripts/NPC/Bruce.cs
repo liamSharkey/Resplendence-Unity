@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialBoy : NPCDialogue
+public class Bruce : NPCDialogue
 {
     private string[] firstDialogueSet = { "Hey Mani, how've you been?",
         "Listen, I know you don't believe in any of the sorcery from the stories I've told you, but I'm telling you that mirror I gave you is something special.",
@@ -29,7 +29,7 @@ public class TutorialBoy : NPCDialogue
 
     private void Awake()
     {
-        NPCName = "Ozzy";
+        NPCName = "Bruce";
     }
 
     void Start()
@@ -45,22 +45,16 @@ public class TutorialBoy : NPCDialogue
             default:
                 currentKeyDialogue = 1;
                 break;
-            case 0:
-                currentKeyDialogue = 1;
-                break;
             case 1:
                 currentKeyDialogue = 1;
                 break;
-            case 2:
+            case 3:
                 currentKeyDialogue = 2;
                 break;
-            case 5:
+            case 6:
                 currentKeyDialogue = 3;
                 break;
-            case 7:
-                currentKeyDialogue = 4;
-                break;
-            case 8:
+            case 9:
                 currentKeyDialogue = 4;
                 break;
         }

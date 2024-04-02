@@ -46,34 +46,16 @@ public class PinkLady : NPCDialogue
             case 0:
                 currentKeyDialogue = 1;
                 break;
-            case 1:
-                currentKeyDialogue = 1;
-                break;
             case 2:
                 currentKeyDialogue = 2;
                 break;
-            case 3:
-                currentKeyDialogue = 2;
-                break;
             case 4:
-                currentKeyDialogue = 2;
+                currentKeyDialogue = 3;
                 break;
             case 5:
                 currentKeyDialogue = 3;
                 break;
-            case 6:
-                currentKeyDialogue = 3;
-                break;
-            case 7:
-                currentKeyDialogue = 4;
-                break;
             case 8:
-                currentKeyDialogue = 4;
-                break;
-            case 9:
-                currentKeyDialogue = 4;
-                break;
-            case 10:
                 currentKeyDialogue = 4;
                 break;
         }
