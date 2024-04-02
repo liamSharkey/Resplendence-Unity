@@ -8,7 +8,8 @@ public class TutorialBoy : NPCDialogue
         "Listen, I know you don't believe in any of the sorcery from the stories I've told you, but I'm telling you that mirror I gave you is something special.",
         "All you have to do is get real close and look into it and it'll give you a real test of strength",
         "Just remember, don't be reckless. You're not going to be able to fend anything off by just running around aimlessly. The longer you're calm, the stronger you'll be.",
-        "If you do want to fight back though, try the ARROW KEYS. They'll help you channel your tranquility and conquer the demons."};
+        "If you do want to fight back though, try the ARROW KEYS. They'll help you channel your tranquility and conquer the demons.",
+        "One more thing, if you haven't already, speak with Yatso. He will help you navigate the world of the reflections."};
 
     private string[] secondDialogueSet = { "Looks like you got that mirror to work!",
         "What are you finding in there? I hear its different for everyone that uses it.",
@@ -57,7 +58,7 @@ public class TutorialBoy : NPCDialogue
                 currentKeyDialogue = 3;
                 break;
             case 7:
-                currentKeyDialogue = 4;
+                currentKeyDialogue = 3;
                 break;
             case 8:
                 currentKeyDialogue = 4;
