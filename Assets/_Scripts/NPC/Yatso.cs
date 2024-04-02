@@ -12,11 +12,17 @@ public class Yatso : NPCDialogue
     "Be sure that you have enough TRANQUILITY for your attack before you use it, or you will find yourself defenseless!"};
 
     private string[] secondDialogueSet = { "I see you've begun to purify your spirit, but there is still much work to do.",
-    "You may have noticed, as you conquer reflections, your maximum focus and health will rise"};
+    "You may have noticed, as you conquer reflections, your maximum TRANQUILITY and HEALTH will rise.",
+    "I should also tell you, the more TRANQUILITY you have, the faster your HEALTH will regenerate.",
+    "You may want to keep this in mind as you progress further..."};
 
-    private string[] thirdDialogueSet = { "Third Yatso" };
+    private string[] thirdDialogueSet = { "You've made great progress Mani.",
+    "Although your spirit still needs some work.",
+    "You must still face Ignorance, Thirst, Fear, Delusion, Disgust, and Jealousy.",
+    "I wish you luck in these challenges, they will be not be as easy as what you've done so far."};
 
-    private string[] fourthDialogueSet = { "Fourth Yatso" };
+    private string[] fourthDialogueSet = { "Your spirit is almost cleansed Mani.",
+    "You have only the toughest challenges left, I hope for your sake you're prepared."};
 
     private void Awake()
     {

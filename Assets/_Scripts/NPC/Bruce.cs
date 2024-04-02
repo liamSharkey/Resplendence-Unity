@@ -14,13 +14,13 @@ public class Bruce : NPCDialogue
     "HA! Tricked you! of course I meant it, you loser!",
     "I can't believe you fell for that!"};
 
-    private string[] thirdDialogueSet = { "Okay so I recently learned that you're friends with Olaf",
-    "Listen Mani I was just joking earlier. Please don't tell Olaf I said any of it",
+    private string[] thirdDialogueSet = { "Okay so I recently learned that you're friends with Olaf.",
+    "Listen Mani I was just joking earlier. Please don't tell Olaf I said any of it.",
     "That guy scares me to my core..."};
 
     private string[] fourthDialogueSet = { "Okay seriously I don't get it!",
     "You seem like the worst guy ever and yet everyone seems to like you!",
-    "Yeah sure this tavern is alright or whatever, but why don't they like me",
+    "Yeah sure this tavern is alright or whatever, but why don't they like me.",
     "I'm just as good as you, alright?!"};
 
     private void Awake()

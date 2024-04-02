@@ -14,7 +14,7 @@ public class GreenMan : NPCDialogue
     "I recently stumbled upon something you might be interested in.",
     "It's a way of focussing tranquility into energy. Ozzy told me you were into this sorta thing.",
     "All you have to do is hold THE LEFT SHIFT KEY while pressing an arrow key and you'll harness way more energy.",
-    "Be careful though. It costs much more of your focus than you would typically exert"};
+    "Be careful though. It costs much more of your focus than you would typically exert."};
 
     private string[] thirdDialogueSet = { "Hey Mani you'll never believe what I found!",
     "Deep in a forest past the mountain range south of here, I found a small village, and there are more people like me there!",
