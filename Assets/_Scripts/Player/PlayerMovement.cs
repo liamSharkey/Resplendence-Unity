@@ -94,10 +94,6 @@ public class PlayerMovement : MonoBehaviour
             fireProjectile();
             heal();
         }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            health = maxHealth;
-        }
     }
 
     void movePlayer()
