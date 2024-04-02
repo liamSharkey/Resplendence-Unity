@@ -7,11 +7,9 @@ public class Statue : MonoBehaviour
     private Animator animator;
     private CapsuleCollider2D capsuleCollider;
 
-    // Event declaration for statue removal
     public delegate void StatueRemoved();
     public event StatueRemoved OnStatueRemoved;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,7 +26,6 @@ public class Statue : MonoBehaviour
     public void remove()
     {
 
-        // Invoke the event when the statue is removed
         if (OnStatueRemoved != null)
             OnStatueRemoved();
 

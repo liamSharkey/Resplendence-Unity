@@ -19,6 +19,8 @@ public class IllusionScript : MonoBehaviour
     private float shootingInterval = 3f;
     private float lastShotTime;
 
+    private GameObject shot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,13 +47,14 @@ public class IllusionScript : MonoBehaviour
     {
         if (projectilePrefab != null)
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            shot = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         }
     }
 
 
     public IEnumerator Die()
     {
+        Destroy(shot);
         capsuleCollider.enabled = false;
         animator.SetBool("Break", true);
         yield return new WaitForSeconds(0);

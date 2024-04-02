@@ -158,7 +158,6 @@ public IEnumerator die()
         bossHealthBar.SetActive(false);
         victoryScreen.SetActive(true);
 
-        // setting highest defeated boss to be 1
         _GameManager.savePrefInt("HighestBossDefeated", bossNumber);
 
         yield return new WaitForSeconds(deathTime);
