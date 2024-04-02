@@ -57,10 +57,10 @@ public class PlayerMovement : MonoBehaviour
         lastHealed = Time.time;
         lastDamaged = Time.time;
 
-        maxHealth = 20 + _GameManager.highestBossDefeated * 5;
+        maxHealth = 20 + _GameManager.highestBossDefeated * 2;
         health = maxHealth;
 
-        tranquilityLimit = 100 + _GameManager.highestBossDefeated * 20;
+        tranquilityLimit = 100 + _GameManager.highestBossDefeated * 10;
         tranquility = 0;
     }
 
