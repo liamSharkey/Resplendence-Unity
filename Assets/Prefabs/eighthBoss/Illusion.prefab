@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2621155100867000945}
   - component: {fileID: 7816441763579095032}
-  - component: {fileID: 4535897951504780905}
   - component: {fileID: 770537609307031079}
   - component: {fileID: 8630365848739255412}
   - component: {fileID: 737750245785064888}
+  - component: {fileID: 5119507643797735281}
   m_Layer: 0
   m_Name: Illusion
   m_TagString: Illusion
@@ -88,27 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4535897951504780905
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326268795956514463}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 78aebd1f9b0524a0890d0c4762bdb7bd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &770537609307031079
 Rigidbody2D:
   serializedVersion: 4
@@ -188,3 +167,24 @@ MonoBehaviour:
   - {fileID: -494877243, guid: 7b7772fb5fd52ae4a9de81c11306ba7f, type: 3}
   - {fileID: -1592000483, guid: 7b7772fb5fd52ae4a9de81c11306ba7f, type: 3}
   projectilePrefab: {fileID: 903726096729985332, guid: 6e56a5f06b9f36b4099fba987b80dcb1, type: 3}
+--- !u!95 &5119507643797735281
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326268795956514463}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ac16941533fd4c4fb4a7a15b8e30774, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -7,7 +7,7 @@ public class thirdBoss : Boss
 {
     private bool moving = false;
     private Vector3 newPosition;
-    private int initialStatuesSpawned = 0; // Counter for spawned statues
+    private int initialStatuesSpawned = 0; 
     private bool bossVisible = false;
 
     public GameObject statuePrefab;
@@ -22,25 +22,21 @@ public class thirdBoss : Boss
     private Vector3 center = new Vector3(0, 14, 0);
 
     private Vector3 furthestPosition;
-    private Vector3[] statuePositions; // Positions for statues in phase 2
-    private int statueCount = 6; // Number of statues to spawn in phase 2
+    private Vector3[] statuePositions; 
+    private int statueCount = 6; 
 
-    // Start is called before the first frame update
     void Start()
     {
         UniversalStart();
 
-        // Instantiate the first statue prefab
         InstantiateStatue();
         furthestPosition = position1;
 
-        // Initialize statue positions in phase 2
         statuePositions = CalculateCirclePositions(center, 6f, statueCount);
     }
 
     private int shots = 9;
 
-    // Update is called once per frame
     void Update()
     {
         if (!bossVisible)
@@ -54,18 +50,15 @@ public class thirdBoss : Boss
             }
 
         
-            // Regular behavior for phase 1
             if (Time.time - lastFired > fireTime && !moving)
             {
-                StartCoroutine(FireRepeatedly(shots, 0.09f)); // Fire 9 times with 0.25 seconds delay
+                StartCoroutine(FireRepeatedly(shots, 0.09f)); 
             }
 
-            // Only move if not already moving
             if (!moving)
             {
                 if (Time.time - lastMoved > moveTime)
                 {
-                    // Move the boss to the position furthest from the player
                     furthestPosition = FindFurthestPositionFromPlayer();
                     moving = true;
                 }
@@ -89,7 +82,6 @@ public class thirdBoss : Boss
 
     Vector3 FindFurthestPositionFromPlayer()
     {
-        // Calculate the distance between the player and each position
         float maxDistance = float.MinValue;
         Vector3 furthestPosition = Vector3.zero;
 
@@ -99,7 +91,6 @@ public class thirdBoss : Boss
             float distance = Vector3.Distance(playerTransform.position, position);
             if (distance > maxDistance)
             {
-                // Check if the boss is not already within range of this position
                 if (Vector3.Distance(transform.position, position) > 1f)
                 {
                     maxDistance = distance;
@@ -113,10 +104,8 @@ public class thirdBoss : Boss
 
     void MoveToPosition(Vector3 targetPosition)
     {
-        // Calculate the distance remaining to the target position
         float distanceToTarget = Vector3.Distance(transform.position, targetPosition);
 
-        // If the distance is small enough, stop moving
         if (distanceToTarget < 0.1f)
         {
             lastMoved = Time.time;
@@ -124,36 +113,30 @@ public class thirdBoss : Boss
             return;
         }
 
-        // Calculate the movement direction
         Vector3 movementDirection = (targetPosition - transform.position).normalized;
 
-        // Move the boss smoothly towards the target position
         transform.position += movementDirection * movementSpeed * Time.deltaTime;
     }
 
     void StartPhaseTwo()
     {
-        // Disable collider
         capsuleCollider.enabled = false;
         HandlePhaseTwo();
 
-        // Start moving in a circle
         StartCoroutine(MoveInCircle(center, 6f));
     }
 
     IEnumerator MoveInCircle(Vector3 center, float radius)
 {
 
-    SpawnStatues(); // Spawn statues initially
+    SpawnStatues(); 
 
     while (!dead)
     {
-        // Calculate position on the circle using sine and cosine functions
         float x = center.x + Mathf.Cos(Time.time * movementSpeed) * radius;
         float y = center.y + Mathf.Sin(Time.time * movementSpeed) * radius;
         Vector3 targetPosition = new Vector3(x, y, 0);
 
-        // Move towards target position
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
         yield return null;
     }
@@ -161,7 +144,6 @@ public class thirdBoss : Boss
 
     void SpawnStatues()
     {
-        // Spawn statues at evenly spaced positions around the circle
         for (int i = 0; i < statueCount; i++)
         {
             currentStatue = Instantiate(statuePrefab, statuePositions[i], Quaternion.identity);
@@ -172,13 +154,10 @@ public class thirdBoss : Boss
 
     Vector3[] CalculateCirclePositions(Vector3 center, float radius, int count)
     {
-        // Calculate angle between each statue
         float angleStep = 360f / count;
 
-        // Initialize array to hold positions
         Vector3[] positions = new Vector3[count];
 
-        // Calculate positions around the circle
         for (int i = 0; i < count; i++)
         {
             float angle = i * angleStep;
@@ -200,7 +179,6 @@ public class thirdBoss : Boss
 
     void fire()
     {
-        // Calculate direction from boss to player
         Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
         // Calculate rotation angle
@@ -209,10 +187,8 @@ public class thirdBoss : Boss
         // Adjust rotation to point bottom towards player
         angle += 90f;
 
-        // Instantiate projectile with rotation
         GameObject projectile = Instantiate(bossProjectile, transform.position, Quaternion.Euler(0f, 0f, angle));
 
-        // Update last fired time
         lastFired = Time.time;
     }
 
@@ -236,18 +212,16 @@ public class thirdBoss : Boss
 
     void InstantiateStatue()
     {
-        // Spawn a new statue only if the total number spawned is less than 3
         if (initialStatuesSpawned < 3)
         {
             if (currentStatue != null)
                 Destroy(currentStatue);
 
             currentStatue = Instantiate(statuePrefab, transform.position, Quaternion.identity);
-            initialStatuesSpawned++; // Increment the counter
+            initialStatuesSpawned++; 
             bossVisible = false;
             capsuleCollider.enabled = false;
 
-            // Subscribe to the statue's remove event
             currentStatue.GetComponent<Statue>().OnStatueRemoved += InitialStatueDestroyed;
         }
     }
@@ -260,7 +234,6 @@ public class thirdBoss : Boss
         }
         else
         {
-            // If already spawned 3 statues, set boss visible and enable collider
             bossVisible = true;
             capsuleCollider.enabled = true;
         }
@@ -279,8 +252,8 @@ public class thirdBoss : Boss
     {
         for (int i = 0; i < numShots; i++)
         {
-            fire(); // Call the fire method
-            yield return new WaitForSeconds(delayBetweenShots); // Wait for the specified delay
+            fire(); 
+            yield return new WaitForSeconds(delayBetweenShots); 
         }
 
         lastFired = Time.time; // Update last fired time

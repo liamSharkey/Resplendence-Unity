@@ -64,7 +64,7 @@ public class Projectiles : MonoBehaviour
         IllusionScript I = collision.GetComponent<IllusionScript>();
         if (I != null)
         {
-            I.remove();
+            StartCoroutine(I.Die());
         }
         if (collision.gameObject.name == "Boss")
         {

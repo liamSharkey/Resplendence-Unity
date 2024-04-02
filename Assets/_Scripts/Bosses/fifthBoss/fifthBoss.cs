@@ -49,7 +49,6 @@ public class fifthBoss : Boss
             // Calculate direction from boss to player
             Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
-            // Determine which direction the boss should face based on the direction vector
             if (Mathf.Abs(directionToPlayer.x) > Mathf.Abs(directionToPlayer.y))
             {
                 // Face left or right
@@ -88,7 +87,6 @@ public class fifthBoss : Boss
         bossHealthBar.SetActive(false);
         victoryScreen.SetActive(true);
 
-        // setting highest defeated boss to be 5
         _GameManager.savePrefInt("HighestBossDefeated", bossNumber);
 
         yield return new WaitForSeconds(deathTime);
@@ -165,7 +163,7 @@ void Move2()
     if (movePositions.Count == 0)
         return;
 
-    foreach (var pos in movePositions.ToArray()) // Use ToArray to avoid modifying the collection inside the loop
+    foreach (var pos in movePositions.ToArray()) 
     {
         if (pos == TopLeft)
         {
@@ -211,14 +209,11 @@ void Move2()
         }
     }
 
-    // If there are no valid positions, return
     if (movePositions.Count == 0)
         return;
 
-    // Choose a random position from the filtered list
     Vector3 newPosition = movePositions[Random.Range(0, movePositions.Count)];
 
-    // Move the boss instantly to the new position
     transform.position = newPosition;
 }
 
@@ -238,13 +233,11 @@ void Move2()
 
 IEnumerator FireAttacks(Vector3 position)
 {
-    // Trigger FlareAttack1 immediately
     FlareAttack1(position);
 
     // Wait for 1.5 seconds
     yield return new WaitForSeconds(2.5f);
 
-    // Trigger BeamAttack1 four times with a gap of 0.25 seconds between each call
     for (int i = 0; i < 12; i++)
     {
         BeamAttack1(position);
@@ -257,13 +250,10 @@ IEnumerator FireAttacks(Vector3 position)
 
 IEnumerator FireAttacks2(Vector3 position)
 {
-    // Trigger FlareAttack1 immediately
     FlareAttack2(position);
 
-    // Wait for 1.5 seconds
     yield return new WaitForSeconds(2.5f);
 
-    // Trigger BeamAttack1 four times with a gap of 0.25 seconds between each call
     for (int i = 0; i < 12; i++)
     {
         BeamAttack2(position);
