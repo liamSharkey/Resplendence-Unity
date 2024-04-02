@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     private bool shiftPressed;
     private bool ctrlPressed;
 
+    public GameObject dialogueBox;
+
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -88,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (!dead)
+        if (!dead && !dialogueBox.activeInHierarchy)
         {
             movePlayer();
             fireProjectile();

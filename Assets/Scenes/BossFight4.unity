@@ -17795,6 +17795,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e671d1e2173ac5449faaa813c907fc1, type: 3}
+--- !u!1 &402062628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8123875526349665245, guid: 1e671d1e2173ac5449faaa813c907fc1, type: 3}
+  m_PrefabInstance: {fileID: 402062627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &422412749
 GameObject:
   m_ObjectHideFlags: 0
@@ -18295,6 +18300,7 @@ MonoBehaviour:
   projectileUlt: {fileID: 903726096729985332, guid: ba4fc064c3928cf48bb72d238caf8c7f, type: 3}
   health: 20
   maxHealth: 20
+  dialogueBox: {fileID: 402062628}
 --- !u!95 &583646367
 Animator:
   serializedVersion: 5

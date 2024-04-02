@@ -18192,6 +18192,7 @@ MonoBehaviour:
   projectileUlt: {fileID: 903726096729985332, guid: ba4fc064c3928cf48bb72d238caf8c7f, type: 3}
   health: 20
   maxHealth: 20
+  dialogueBox: {fileID: 585496788}
 --- !u!95 &583646367
 Animator:
   serializedVersion: 5

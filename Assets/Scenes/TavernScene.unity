@@ -9124,6 +9124,7 @@ MonoBehaviour:
   projectileUlt: {fileID: 0}
   health: 100
   maxHealth: 100
+  dialogueBox: {fileID: 1584134172}
 --- !u!95 &583646367
 Animator:
   serializedVersion: 5

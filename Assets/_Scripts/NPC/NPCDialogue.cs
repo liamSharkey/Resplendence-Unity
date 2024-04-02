@@ -113,7 +113,7 @@ public class NPCDialogue : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerIsClose = false;
-            dialogueToolTip.SetActive(playerIsClose && !dialoguePanel.activeInHierarchy);
+            dialogueToolTip.SetActive(playerIsClose);
             zeroText();
         }
     }

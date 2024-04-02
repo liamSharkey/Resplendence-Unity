@@ -10,11 +10,11 @@ public class Yatso : NPCDialogue
     "I can sense Sadness, Foolishness, Shame, Treachery, Ignorance, Thirst, Fear, Delusion, Disgust and Fear within you.",
     "You must do something to rid yourself of this!"};
 
-    private string[] secondDialogueSet = { "" };
+    private string[] secondDialogueSet = { "Second Yatso" };
 
-    private string[] thirdDialogueSet = { "" };
+    private string[] thirdDialogueSet = { "Third Yatso" };
 
-    private string[] fourthDialogueSet = { "" };
+    private string[] fourthDialogueSet = { "Fourth Yatso" };
 
     private void Awake()
     {
