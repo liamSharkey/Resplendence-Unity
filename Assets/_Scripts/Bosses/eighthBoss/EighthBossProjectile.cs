@@ -31,7 +31,6 @@ public class EighthBossProjectile : MonoBehaviour
 
             if (circleTimer < circlingDuration * (currentCirclingPhase + 1))
             {
-                // Circular movement
                 float angle = (circleTimer - circlingDuration * currentCirclingPhase) / circlingDuration * 2 * Mathf.PI;
                 float currentRadius = circlingRadii[currentCirclingPhase];
                 Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * currentRadius;
@@ -39,7 +38,6 @@ public class EighthBossProjectile : MonoBehaviour
             }
             else if (currentCirclingPhase < circlingRadii.Length - 1)
             {
-                // Move to the next circling phase
                 currentCirclingPhase++;
                 UpdateSprite();
             }
@@ -69,7 +67,7 @@ public class EighthBossProjectile : MonoBehaviour
 
     void TargetPlayer()
     {
-        aliveTime = Time.time; // Reset the aliveTime to start the 3-second countdown
+        aliveTime = Time.time;
 
         if (projectileSprites.Length > 2)
         {

@@ -18,8 +18,6 @@ public class EighthBoss : Boss
     private float lastShootTime = 0f;
     private bool isOnCooldown = false;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         bossNumber = 8;
@@ -35,10 +33,9 @@ public class EighthBoss : Boss
             Vector2 screenBottomLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, mainCamera.nearClipPlane));
             Vector2 screenTopRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, mainCamera.nearClipPlane));
 
-            float minDistanceFromPlayer = 5f; // Minimum distance from the player
+            float minDistanceFromPlayer = 5f; 
             Vector3 spawnPosition;
 
-            // Keep randomizing the spawn position until it's far enough from the player and within camera bounds
             do
             {
                 float spawnX = UnityEngine.Random.Range(screenBottomLeft.x, screenTopRight.x);
@@ -51,7 +48,6 @@ public class EighthBoss : Boss
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time - lastIllusionSpawnedTime > illusionSpawnInterval && !dead)
