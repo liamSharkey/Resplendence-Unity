@@ -84,6 +84,7 @@ public class FourthBoss : Boss
 
     private IEnumerator ChargeTowardsPlayer()
     {
+        if (dead) { yield return null; }
         float startTime = Time.time;
         transform.localScale = new Vector3(1.5f, 1.5f, 1);
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -109,6 +110,7 @@ public class FourthBoss : Boss
 
     private IEnumerator RetreatFromPlayer()
     {
+        if (dead) { yield return null; }
         float startTime = Time.time;
         transform.localScale = new Vector3(0.75f, 0.75f, 1);
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -144,12 +146,14 @@ public class FourthBoss : Boss
     {
         if (collision.CompareTag("Player"))
         {
+            if (dead) { return; }
             collision.GetComponent<PlayerMovement>().takeDamage(6);
         }
     }
 
     private void FireProjectile()
     {
+        if (dead) { return; }
         Instantiate(bossProjectile, transform.position, Quaternion.identity);
         lastFired = Time.time;
     }

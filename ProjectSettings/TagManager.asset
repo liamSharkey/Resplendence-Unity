@@ -8,6 +8,8 @@ TagManager:
   - Boss
   - Projectile
   - Illusion
+  - PlayerProjectile
+  - Spawner
   layers:
   - Default
   - TransparentFX

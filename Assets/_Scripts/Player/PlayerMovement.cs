@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     private bool shiftPressed;
     private bool ctrlPressed;
 
+    public GameObject dialogueBox;
+
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -55,10 +57,10 @@ public class PlayerMovement : MonoBehaviour
         lastHealed = Time.time;
         lastDamaged = Time.time;
 
-        maxHealth = 20 + _GameManager.highestBossDefeated * 5;
+        maxHealth = 20 + _GameManager.highestBossDefeated * 2;
         health = maxHealth;
 
-        tranquilityLimit = 100 + _GameManager.highestBossDefeated * 20;
+        tranquilityLimit = 100 + _GameManager.highestBossDefeated * 10;
         tranquility = 0;
     }
 
@@ -88,11 +90,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (!dead)
+        if (!dead && !dialogueBox.activeInHierarchy)
         {
             movePlayer();
             fireProjectile();
             heal();
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            health = maxHealth;
         }
     }
 
@@ -133,8 +139,12 @@ public class PlayerMovement : MonoBehaviour
         //Set cost to either big projectile cost or regular dependent on shift
         shiftPressed = Input.GetKey("left shift");
         ctrlPressed = Input.GetKey(KeyCode.Space);
-        if (shiftPressed) { cost = bigFireCost; }
-        else if (ctrlPressed) { cost = ultFireCost;  }
+
+        // technique only works if unlocked through Faendel's Dialogue
+        if (shiftPressed && PlayerPrefs.GetInt("Faendel") > 1) { cost = bigFireCost; }
+
+        // technique only works if unlocked through Olaf's Dialogue
+        else if (ctrlPressed && PlayerPrefs.GetInt("Olaf") > 2) { cost = ultFireCost;  }
         else
         {
             cost = fireCost;
@@ -142,11 +152,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (fireChange != Vector3.zero && tranquility > cost)
         {
-            if (shiftPressed)
+            if (cost == bigFireCost)
             {
                 Instantiate(projectileBig, transform.position, Quaternion.Euler(fireChange));
             }
-            else if (ctrlPressed)
+            else if (cost == ultFireCost)
             {
                 Instantiate(projectileUlt, transform.position, Quaternion.Euler(fireChange));
             }
