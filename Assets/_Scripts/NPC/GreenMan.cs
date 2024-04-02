@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class GreenMan : NPCDialogue
 {
-    private string[] firstDialogueSet = { "Faendel First" };
+    private string[] firstDialogueSet = { "You must be the tavern keeper. Mani is it?",
+    "I'm Faendel, the greatest explorer who ever lived.",
+    "I was on my way through a nearby forest and stumbled upon this place. \"The Ramblin' Rumbler\". Catchy. ",
+    "I like it here, you'll be seeing more of me.",
+    "That is when I'm not out searching."};
 
-    private string[] secondDialogueSet = { "Faendel Second"};
+    private string[] secondDialogueSet = { "Mani. Good to see you.",
+    "I recently stumbled upon something you might be interested in.",
+    "It's a way of focussing tranquility into energy. Ozzy told me you were into this sorta thing.",
+    "All you have to do is hold THE LEFT SHIFT KEY while pressing an arrow key and you'll harness way more energy.",
+    "Be careful though. It costs much more of your focus than you would typically exert"};
 
-    private string[] thirdDialogueSet = { "Faendel Third"};
+    private string[] thirdDialogueSet = { "Hey Mani you'll never believe what I found!",
+    "Deep in a forest past the mountain range south of here, I found a small village, and there are more people like me there!",
+    "To be honest, I've never really known where I came from... ",
+    "I can't wait to go back!"};
 
-    private string[] fourthDialogueSet = { "Faendel Fourth"};
+    private string[] fourthDialogueSet = { "Well Mani, this will be the last time I see you",
+    "I found a nice lady in that village I was telling you about.",
+    "I think its time I settle down over there, so I won't be needing to stop through here anymore.",
+    "I found what I was searching for."};
 
     private void Awake()
     {
@@ -22,7 +36,7 @@ public class GreenMan : NPCDialogue
         dialogueProgress = getDialogueProgress();
 
         // Set Base params
-        defaultDialogueSet[0] = "Faendel Default";
+        defaultDialogueSet[0] = "Better recharge, got to get back out there.";
 
         // based on most recent boss defeted, determine next key piece of dialogue
         switch (_GameManager.highestBossDefeated)

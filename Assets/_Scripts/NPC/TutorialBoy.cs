@@ -8,24 +8,23 @@ public class TutorialBoy : NPCDialogue
         "Listen, I know you don't believe in any of the sorcery from the stories I've told you, but I'm telling you that mirror I gave you is something special.",
         "All you have to do is get real close and look into it and it'll give you a real test of strength",
         "Just remember, don't be reckless. You're not going to be able to fend anything off by just running around aimlessly. The longer you're calm, the stronger you'll be.",
-        "If you do want to fight back though, try the arrow keys. They'll help you channel your tranquility and conquer the demons."};
+        "If you do want to fight back though, try the ARROW KEYS. They'll help you channel your tranquility and conquer the demons."};
 
-    private string[] secondDialogueSet = { "Mani! You seem to have a new glow about you!",
-        "Now I understand you may not be so eager to see me, but I just can't seem to leave its too nice of a place and the food is...",
-        "Okay, I have a confession. The real reason I'm here today is I'm supposed to meet this man named Godot.",
-        "You see, I've always dreamt of being an adventurer like the other folks in here, but I've never known how.",
-        "But I've heard, if you give him a chance, Godot will take you on an adventure you won't forget! I can't wait to meet him and change my life!"};
+    private string[] secondDialogueSet = { "Looks like you got that mirror to work!",
+        "What are you finding in there? I hear its different for everyone that uses it.",
+        "Whatever it is, I hope you come out stronger. I've hated seeing you down recently."};
 
-    private string[] thirdDialogueSet = { "...oh, hi Mani",
-        "I know I know, when did Delores turn into such a downer?",
-        "I've been waiting for so long and no one has come to see me. I'm beginning to have second thoughts about this adventure of mine.",
-        "I just can't help but seeing all these heroic folk in here and thinking: \"how could I ever do that?\"",
-        "Maybe its time to pack it up. He was probably never going to come anyway..."};
+    private string[] thirdDialogueSet = { "I'm so glad to see you looking up Mani.",
+    "To be honest I used that mirror myself once.",
+    "Things got tough for me but it helped me. Looks like its doing the same for you.",
+    "Don't stop now Mani, I know you can come to true inner peace with a little more push."};
 
-    private string[] fourthDialogueSet = { "Oh my, Mani! Its great to see you!",
-        "No, that man I was waiting for never came. But who cares. I've decided I'm going to figure out this adventuring stuff on my own.",
-        "I don't know what it is about you, but it just seems like you've changed so much in the last few weeks.",
-        "You've truly inspired me to make my own change. I'm going to be an adventurer! and no one can stop me."};
+    private string[] fourthDialogueSet = { "Hi Mani.",
+    "I'm sorry, but I've gotta leave town.",
+    "Its been great being nearby the last couple weeks but I have to go back home.",
+    "I wanted to see you before I left. I know you're on your own journey right now, and I'm proud of how far you've come.",
+    "I hope someday you can come visit me...",
+    "Goodbye for now."};
 
     private void Awake()
     {

@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class Bruce : NPCDialogue
 {
-    private string[] firstDialogueSet = { "Hey Mani, how've you been?",
-        "Listen, I know you don't believe in any of the sorcery from the stories I've told you, but I'm telling you that mirror I gave you is something special.",
-        "All you have to do is get real close and look into it and it'll give you a real test of strength",
-        "Just remember, don't be reckless. You're not going to be able to fend anything off by just running around aimlessly. The longer you're calm, the stronger you'll be.",
-        "If you do want to fight back though, try the arrow keys. They'll help you channel your tranquility and conquer the demons."};
+    private string[] firstDialogueSet = { "God, this place is the worst!",
+    "Wait you're the Tavern Keeper?",
+    "You must be the biggest idiot there is!",
+    "Just a foolish little man with a foolish little tavern."};
 
-    private string[] secondDialogueSet = { "Mani! You seem to have a new glow about you!",
-        "Now I understand you may not be so eager to see me, but I just can't seem to leave its too nice of a place and the food is...",
-        "Okay, I have a confession. The real reason I'm here today is I'm supposed to meet this man named Godot.",
-        "You see, I've always dreamt of being an adventurer like the other folks in here, but I've never known how.",
-        "But I've heard, if you give him a chance, Godot will take you on an adventure you won't forget! I can't wait to meet him and change my life!"};
+    private string[] secondDialogueSet = { "Hey Mani, I'm sorry about earlier, that was mean.",
+    "I didn't really mean any of it...",
+    "HA! Tricked you! of course I meant it, you loser!",
+    "I can't believe you fell for that!"};
 
-    private string[] thirdDialogueSet = { "...oh, hi Mani",
-        "I know I know, when did Delores turn into such a downer?",
-        "I've been waiting for so long and no one has come to see me. I'm beginning to have second thoughts about this adventure of mine.",
-        "I just can't help but seeing all these heroic folk in here and thinking: \"how could I ever do that?\"",
-        "Maybe its time to pack it up. He was probably never going to come anyway..."};
+    private string[] thirdDialogueSet = { "Okay so I recently learned that you're friends with Olaf",
+    "Listen Mani I was just joking earlier. Please don't tell Olaf I said any of it",
+    "That guy scares me to my core..."};
 
-    private string[] fourthDialogueSet = { "Oh my, Mani! Its great to see you!",
-        "No, that man I was waiting for never came. But who cares. I've decided I'm going to figure out this adventuring stuff on my own.",
-        "I don't know what it is about you, but it just seems like you've changed so much in the last few weeks.",
-        "You've truly inspired me to make my own change. I'm going to be an adventurer! and no one can stop me."};
+    private string[] fourthDialogueSet = { "Okay seriously I don't get it!",
+    "You seem like the worst guy ever and yet everyone seems to like you!",
+    "Yeah sure this tavern is alright or whatever, but why don't they like me",
+    "I'm just as good as you, alright?!"};
 
     private void Awake()
     {
@@ -37,7 +33,7 @@ public class Bruce : NPCDialogue
         dialogueProgress = getDialogueProgress();
 
         // Set Base params
-        defaultDialogueSet[0] = "Good luck Mani, I hope you find what you need in there.";
+        defaultDialogueSet[0] = "This place sucks!";
 
         // based on most recent boss defeted, determine next key piece of dialogue
         switch (_GameManager.highestBossDefeated)

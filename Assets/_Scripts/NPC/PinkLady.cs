@@ -6,13 +6,13 @@ public class PinkLady : NPCDialogue
 {
     private string[] firstDialogueSet = { "Hello! My name is Delores and you must be Mani.",
         "I've heard so many great things about the Ramblin' Rumbler but never had the pleasure of stopping by before today.",
-        "Say, you must see many travellers coming in and out of here, do you have any interesting tales passed on by those heroes?" };
+        "Say, you must see many travellers coming in and out of here, I'd love to hear some of their stories." };
 
     private string[] secondDialogueSet = { "Mani! You seem to have a new glow about you!",
-        "Now I understand you may not be so eager to see me, but I just can't seem to leave its too nice of a place and the food is...",
-        "Okay, I have a confession. The real reason I'm here today is I'm supposed to meet this man named Godot.",
+        "Now I understand you may not be so eager to see me, but I just keep seeming to find myself here! Its too nice of a place and the food is...",
+        "Okay, I have a confession. The real reason I keep coming is that I'm supposed to meet this man named Beck.",
         "You see, I've always dreamt of being an adventurer like the other folks in here, but I've never known how.",
-        "But I've heard, if you give him a chance, Godot will take you on an adventure you won't forget! I can't wait to meet him and change my life!"};
+        "But I've heard, if you give Beck a chance, he'll take you on an adventure you won't forget! I can't wait to meet him and change my life!"};
 
     private string[] thirdDialogueSet = { "...oh, hi Mani",
         "I know I know, when did Delores turn into such a downer?",
