@@ -7,6 +7,8 @@ TagManager:
   - NPC
   - Boss
   - Projectile
+  - PlayerProjectile
+  - Spawner
   layers:
   - Default
   - TransparentFX
