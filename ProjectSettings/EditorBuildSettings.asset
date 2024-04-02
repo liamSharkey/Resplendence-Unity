@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BossFight6.unity
     guid: c5acd3285045b45a68ee063e17a298fb
   - enabled: 1
+    path: Assets/Scenes/BossFight7.unity
+    guid: 76126af45570bd349adfd3abc19d13fb
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 681e2714d7514eb4e8fd7bdd2e26a007
   m_configObjects: {}

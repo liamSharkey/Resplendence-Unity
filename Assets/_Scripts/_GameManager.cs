@@ -7,7 +7,7 @@ public class _GameManager : MonoBehaviour
 {
     public static int highestBossDefeated;
     public static int numberOfDefeatedBosses;
-    public static int totalNumberOfBosses = 6;
+    public static int totalNumberOfBosses = 7;
 
     public static bool isPaused = false;
 
